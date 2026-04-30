@@ -1,0 +1,15 @@
+curl 'https://flatinfo.ru/_/get-offers-data.php' \
+  -H 'accept: */*' \
+  -H 'accept-language: en,ru;q=0.9,en-US;q=0.8,uz;q=0.7' \
+  -H 'cache-control: max-age=0' \
+  -H 'content-type: application/json; charset=utf-8' \
+  -H 'origin: https://flatinfo.ru' \
+  -H 'priority: u=1, i' \
+  -H 'sec-ch-ua: "Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \
+  --data-raw '{"jsonQuery":{"objectType":"flat","dealType":"prodaja","offersIds":"34038140,34060865,34067378,34070789,34095576,34108801,34111545,34120056,34127745,34129835,34144857,34147241,34165723,34169574,34170687,34171611,34175573,34185870,34187243,34193779,34204451,34253099,34256124,33230413,33239526,33954358,33975976,33998749"}}'

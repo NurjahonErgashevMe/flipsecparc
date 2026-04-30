@@ -1,0 +1,16 @@
+curl 'https://flatinfo.ru/api/map-points-geo.php' \
+  -H 'accept: */*' \
+  -H 'accept-language: en,ru;q=0.9,en-US;q=0.8,uz;q=0.7' \
+  -H 'content-type: application/json; charset=utf-8' \
+  -b 'PHPSESSID=350f79dd3c4a345c6f8d9a110023b570; tmr_lvid=bff7eb6dbf4fcb697a94f9f4eef6b849; tmr_lvidTS=1771866197931; _ym_uid=1771866198209317625; _ym_d=1776805862; _ym_isad=2; domain_sid=BYNyKYgnnWIWct__Obc0U%3A1776805862799; _gid=GA1.2.535047457.1776805863; sort=0; pages=20; _ga=GA1.1.775649403.1776805863; tmr_detect=0%7C1776861791190; _ga_GLHK2DYJV9=GS2.1.s1776860020$o2$g1$t1776862933$j60$l0$h0' \
+  -H 'origin: https://flatinfo.ru' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://flatinfo.ru/map.asp?location=1&novostroyki=0&dealtype=prodaja' \
+  -H 'sec-ch-ua: "Google Chrome";v="147", "Not.A/Brand";v="8", "Chromium";v="147"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-origin' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36' \
+  --data-raw '{"boundings":{"northEast":{"lat":55.83734957971071,"lng":37.945060729980476},"soutWest":{"lat":55.66596775107334,"lng":37.285881042480476}},"jsonQuery":{"location":"1","novostroyki":"0","dealtype":"prodaja"},"visible":1}'
