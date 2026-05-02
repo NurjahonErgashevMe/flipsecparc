@@ -186,12 +186,12 @@ def get_house_detail(session, lat, lng):
     даже если объявлений нет."""
     try:
         r = session.post(
-            "https://flatinfo.ru/leaflet/get_details.php",
+            GET_DETAILS_URL,
             json={"lat": lat, "lng": lng},
             timeout=15
         )
         r.raise_for_status()
-        data = r.json()
+        data = _safe_json(r)
         # Если дома по этим координатам нет — house_id будет пустым/None
         return data if data.get("house_id") else None
     except Exception as e:
@@ -244,6 +244,7 @@ def save_checkpoint(houses, visited):
 
 
 def cmd_scan_grid(args):
+    bootstrap_cookies()
     houses, visited = load_checkpoint()
 
     # Генерируем все точки сетки
@@ -505,6 +506,8 @@ def cmd_houses_information(args):
         print(f"[!] Не найден {OUTPUT_FILE}. Сначала запустите сканирование сетки.")
         return
 
+    bootstrap_cookies()
+
     with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
         houses = json.load(f)
 
@@ -609,7 +612,7 @@ def fetch_map_points(session, sw_lat, sw_lng, ne_lat, ne_lng, json_query=None):
     }
     r = session.post(MAP_POINTS_URL, json=payload, timeout=30)
     r.raise_for_status()
-    data = r.json()
+    data = _safe_json(r)
     return data.get("points") or []
 
 
@@ -703,8 +706,13 @@ def cmd_scan_bbox(args):
         print("          Фильтр: только жилые (применяется во второй фазе)")
     print()
 
+    # Прогреваем сессию: получаем PHPSESSID — без него API часто отдаёт HTML
+    bootstrap_cookies()
+
     session = requests.Session()
     session.headers.update(HEADERS_API)
+    if _INIT_COOKIES:
+        session.cookies.update(_INIT_COOKIES)
 
     points_dict = _load_bbox_checkpoint()
     if points_dict:
@@ -733,7 +741,7 @@ def cmd_scan_bbox(args):
         try:
             r = s.post(GET_DETAILS_URL, json={"lat": lat, "lng": lng}, timeout=15)
             r.raise_for_status()
-            data = r.json()
+            data = _safe_json(r)
             if not data.get("house_id"):
                 return ("empty", lat, lng, None)
             return ("ok", lat, lng, data)
@@ -832,16 +840,58 @@ def is_valid_house_page(html):
 _print_lock = threading.Lock()
 _save_lock  = threading.Lock()
 _thread_local = threading.local()
+_INIT_COOKIES = None  # глобальный куки-jar после "прогрева" сайта
+
+
+def bootstrap_cookies():
+    """Делаем GET на главную/map.asp как обычный браузер, чтобы получить
+    PHPSESSID и прочие cookies. Без них API/details часто отдаёт не JSON,
+    а HTML-заглушку — и парсинг падает с 'Expecting value: line 1 column 1'."""
+    global _INIT_COOKIES
+    s = requests.Session()
+    s.headers.update(HEADERS_HTML)
+    urls = [
+        "https://flatinfo.ru/",
+        "https://flatinfo.ru/map.asp?novostroyki=0&dealtype=prodaja",
+    ]
+    for url in urls:
+        try:
+            r = s.get(url, timeout=20, allow_redirects=True)
+            r.raise_for_status()
+        except Exception as e:
+            print(f"  [!] bootstrap GET {url}: {e}")
+    _INIT_COOKIES = requests.utils.dict_from_cookiejar(s.cookies)
+    print(f"[v] Получено cookies: {list(_INIT_COOKIES.keys())}")
+    return _INIT_COOKIES
 
 
 def _thread_session(headers):
-    """Своя requests.Session() на каждый поток (Session не потокобезопасна)."""
+    """Своя requests.Session() на каждый поток (Session не потокобезопасна).
+    Cookies из bootstrap-прогрева подставляются автоматически."""
     s = getattr(_thread_local, "session", None)
     if s is None:
         s = requests.Session()
         s.headers.update(headers)
+        if _INIT_COOKIES:
+            s.cookies.update(_INIT_COOKIES)
         _thread_local.session = s
     return s
+
+
+def _safe_json(r):
+    """Аккуратный r.json() с понятной ошибкой при HTML/пустом ответе."""
+    ctype = (r.headers.get("Content-Type") or "").lower()
+    text = r.text or ""
+    if "json" not in ctype and not text.lstrip().startswith(("{", "[")):
+        snippet = text.strip().replace("\n", " ")[:160]
+        raise ValueError(f"non-JSON response (status={r.status_code}, "
+                         f"ctype={ctype!r}): {snippet!r}")
+    try:
+        return r.json()
+    except Exception as e:
+        snippet = text.strip().replace("\n", " ")[:160]
+        raise ValueError(f"json parse failed (status={r.status_code}): "
+                         f"{e}; body={snippet!r}") from e
 
 
 def _format_progress(done, total, extras=""):
@@ -878,6 +928,8 @@ def cmd_scan_hid(args):
     hid_min = args.hid_min
     hid_max = args.hid_max
     workers = max(1, args.workers)
+
+    bootstrap_cookies()
 
     details = load_existing_details()
     print(f"[v] Уже спарсено ранее: {len(details)} карточек")
