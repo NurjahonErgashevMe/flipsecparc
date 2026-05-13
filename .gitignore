@@ -1,4 +1,6 @@
 docs/
 winners/
+domclick/
 
 __pycache__/
+flatinfo/*.log

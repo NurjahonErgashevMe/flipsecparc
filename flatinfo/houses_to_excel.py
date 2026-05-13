@@ -1,258 +1,190 @@
+#!/usr/bin/env python3
 """
-Конвертация houses.json -> houses.xlsx.
+Экспорт result.json (массив объектов домов flatinfo) в Excel .xlsx.
+Требуется: pip install openpyxl (уже в flatinfo/requirements.txt).
 
-По умолчанию — только жилые дома Москвы
-(purpose == "Жилой дом" и settlement == "Москва").
-
-Ровно 14 полей: Адрес, Год постройки, Перекрытия, Тип дома, Этаж/этажность,
-Серия дома, Округ, Район, Лифты (пасс. и груз.), Высота потолков (см),
-Управляющая компания, Жилой комплекс, Метро (пешком / трансп.), Застройщик.
-
-Использование:
-    python houses_to_excel.py
-    python houses_to_excel.py --input houses.json --output houses.xlsx
-    python houses_to_excel.py --all
+Флаг --only-target оставляет только дома с нужными city_id и без запрещённых street_id
+(тот же отбор, что в houses_parser.py).
 """
 
 from __future__ import annotations
 
 import argparse
 import json
-import re
+import sys
 from pathlib import Path
+from typing import Any
 
-from openpyxl import Workbook
-from openpyxl.cell import WriteOnlyCell
-from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
-from openpyxl.utils import get_column_letter
+try:
+    from openpyxl import Workbook
+    from openpyxl.styles import Alignment, Font
+    from openpyxl.utils import get_column_letter
+except ImportError:
+    print("Нужен пакет openpyxl: pip install openpyxl", file=sys.stderr)
+    raise SystemExit(1)
 
-
-HERE = Path(__file__).parent
-DEFAULT_INPUT = HERE / "houses.json"
-DEFAULT_OUTPUT = HERE / "houses.xlsx"
-
-
-# Описание колонок: (resolver, заголовок, тип, ширина).
-# resolver — функция house -> значение; либо имя ключа в словаре дома.
-# Типы: str | int | float
-def _get(key_path: str):
-    """Создаёт резолвер по dot-пути, напр. 'metro.on_foot.name'."""
-    parts = key_path.split(".")
-
-    def _resolve(h: dict):
-        cur = h
-        for p in parts:
-            if isinstance(cur, dict):
-                cur = cur.get(p)
-            else:
-                return None
-            if cur is None:
-                return None
-        return cur
-    return _resolve
-
-
-def _elevators_passenger(h: dict):
-    """Пассажирские лифты: сначала normalized, потом raw_fields."""
-    v = h.get("passenger_elevators")
-    if v is not None:
-        return v
-    raw = h.get("raw_fields") or {}
-    for key in ("passazhirskih_liftov_v_podezde", "liftov_v_podezde"):
-        if key in raw:
-            return _to_int(raw[key])
-    return None
-
-
-def _elevators_cargo(h: dict):
-    """Грузовые/большие лифты: сначала normalized, потом raw_fields."""
-    v = h.get("cargo_elevators")
-    if v is not None:
-        return v
-    raw = h.get("raw_fields") or {}
-    for key in ("bolshih_liftov_v_podezde", "gruzovyh_liftov_v_podezde"):
-        if key in raw:
-            return _to_int(raw[key])
-    return None
-
-
-def _to_int(s):
-    if s is None or s == "":
-        return None
-    if isinstance(s, (int, float)):
-        return int(s)
-    m = re.search(r"-?\d+", str(s).replace("\xa0", " ").replace(" ", ""))
-    return int(m.group(0)) if m else None
-
-
-def _lifts_both(h: dict) -> str | None:
-    """Пасс. + груз. в одной строке: «пасс. 2, груз. 1»."""
-    p = _elevators_passenger(h)
-    c = _elevators_cargo(h)
-    if p is None and c is None:
-        return None
-    parts: list[str] = []
-    if p is not None:
-        parts.append(f"пасс. {p}")
-    if c is not None:
-        parts.append(f"груз. {c}")
-    return ", ".join(parts)
-
-
-def _metro_walk_or_transport(h: dict) -> str | None:
-    """Ходьба до метро и/или путь на транспорте в одной ячейке."""
-    m = h.get("metro")
-    if not isinstance(m, dict):
-        return None
-    bits: list[str] = []
-    foot = m.get("on_foot")
-    if isinstance(foot, dict) and foot.get("name"):
-        t = foot.get("time_min")
-        bits.append(
-            f"пешком: {foot['name']}"
-            + (f", {t} мин" if t is not None else "")
-        )
-    tr = m.get("on_transport")
-    if isinstance(tr, dict) and tr.get("name"):
-        s = tr.get("stops")
-        bits.append(
-            f"трансп.: {tr['name']}"
-            + (f", {s} ост." if s is not None else "")
-        )
-    return "; ".join(bits) if bits else None
-
-
-# Ровно 14 колонок, порядок = ТЗ
-COLUMNS: list = [
-    (_get("address"),                       "Адрес",                    "str",   48),
-    (_get("built_year"),                    "Год постройки",            "int",   13),
-    (_get("overlap_type"),                 "Перекрытия",               "str",   18),
-    (_get("construction_type"),            "Тип дома",                 "str",   14),
-    (_get("floors_count"),                 "Этаж / этажность",         "int",   12),
-    (_get("series"),                      "Серия дома",                "str",   24),
-    (_get("okrug"),                        "Округ",                    "str",   14),
-    (_get("district"),                     "Район",                    "str",   22),
-    (_lifts_both,                          "Лифты (пасс. и груз.)",   "str",   20),
-    (_get("ceiling_height_cm"),            "Высота потолков, см",      "int",   16),
-    (_get("management_company.name"),      "Управляющая компания",     "str",   32),
-    (_get("housing_complex.name"),         "Жилой комплекс",          "str",   26),
-    (_metro_walk_or_transport,             "Метро (пешком / трансп.)", "str",   40),
-    (_get("developer"),                    "Застройщик",               "str",   28),
+COLUMNS: list[str] = [
+    "house_id",
+    "city",
+    "city_id",
+    "street",
+    "street_id",
+    "jk_id",
+    "jk_name",
+    "ser_id",
+    "ser_name",
+    "subser_id",
+    "subser_name",
+    "house_num",
+    "year",
+    "flats",
+    "podezd",
+    "type",
+    "type_id",
+    "floor",
+    "levels",
+    "lift_p",
+    "lift_g",
+    "jil_type",
+    "house_sales",
+    "house_rents",
+    "lat",
+    "lng",
+    "garbage",
 ]
 
+_DIR = Path(__file__).resolve().parent
 
-def is_residential_moscow(h: dict) -> bool:
-    """Москва + Жилой дом."""
-    if h.get("settlement") != "Москва":
-        return False
-    if h.get("purpose") != "Жилой дом":
-        return False
-    return True
+ALLOWED_CITY_IDS = {"1", "12552", "12565"}
+DISALLOWED_STREET_IDS = {"3745"}
 
 
-def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input", type=Path, default=DEFAULT_INPUT)
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--all", action="store_true",
-                        help="Не фильтровать: экспортировать ВСЕ дома из JSON")
-    return parser.parse_args()
+def matches_target(item: dict[str, Any]) -> bool:
+    return str(item.get("city_id")) in ALLOWED_CITY_IDS and str(
+        item.get("street_id")
+    ) not in DISALLOWED_STREET_IDS
+
+
+WIDTHS: dict[str, float] = {
+    "house_id": 10,
+    "city": 18,
+    "city_id": 8,
+    "street": 36,
+    "street_id": 10,
+    "jk_id": 8,
+    "jk_name": 24,
+    "ser_id": 8,
+    "ser_name": 28,
+    "subser_id": 10,
+    "subser_name": 24,
+    "house_num": 12,
+    "year": 8,
+    "flats": 8,
+    "podezd": 8,
+    "type": 16,
+    "type_id": 8,
+    "floor": 14,
+    "levels": 8,
+    "lift_p": 8,
+    "lift_g": 8,
+    "jil_type": 12,
+    "house_sales": 18,
+    "house_rents": 18,
+    "lat": 12,
+    "lng": 12,
+    "garbage": 10,
+}
+
+
+def load_items(path: Path) -> list[dict[str, Any]]:
+    raw = path.read_text(encoding="utf-8")
+    data = json.loads(raw)
+    if isinstance(data, list):
+        return data
+    if isinstance(data, dict) and "items" in data:
+        return list(data["items"])
+    raise ValueError("Ожидается JSON-массив или объект с ключом «items»")
+
+
+def cell_value(v: Any) -> Any:
+    if v is None:
+        return ""
+    return v
 
 
 def main() -> None:
-    args = parse_args()
-    print(f"Читаю {args.input}...")
-    with args.input.open("r", encoding="utf-8") as fp:
-        houses = json.load(fp)
-    print(f"Всего домов в JSON: {len(houses)}")
+    p = argparse.ArgumentParser(description="flatinfo result.json → Excel (.xlsx)")
+    p.add_argument(
+        "-i",
+        "--input",
+        type=Path,
+        default=_DIR / "result.json",
+        help="Входной JSON (по умолчанию result.json рядом со скриптом)",
+    )
+    p.add_argument(
+        "-o",
+        "--output",
+        type=Path,
+        default=None,
+        help="Выходной .xlsx (по умолчанию: имя входа с расширением .xlsx)",
+    )
+    p.add_argument(
+        "--only-target",
+        action="store_true",
+        help=(
+            "Только дома: city_id из {1, 12552, 12565} и street_id не из запрещённых "
+            "(как в houses_parser)"
+        ),
+    )
+    args = p.parse_args()
+    in_path: Path = args.input
+    if not in_path.is_file():
+        print(f"Файл не найден: {in_path}", file=sys.stderr)
+        raise SystemExit(2)
+    out_path: Path = args.output or in_path.with_suffix(".xlsx")
 
-    if args.all:
-        rows = houses
-        print("Фильтр отключён (--all): экспортирую всё")
-    else:
-        rows = [h for h in houses if is_residential_moscow(h)]
-        skipped = len(houses) - len(rows)
-        print(f"Жилых домов Москвы: {len(rows)}  "
-              f"(отброшено {skipped} нежилых/не-Москва)")
+    items = load_items(in_path)
+    total = len(items)
+    if args.only_target:
+        items = [it for it in items if matches_target(it)]
+        print(f"Всего в JSON: {total}, после --only-target: {len(items)}")
 
-    # Стабильный порядок: по округу -> району -> адресу
-    rows.sort(key=lambda h: (
-        h.get("okrug") or "",
-        h.get("district") or "",
-        h.get("address") or "",
-    ))
+    wb = Workbook()
+    ws = wb.active
+    ws.title = "houses"
 
-    wb = Workbook(write_only=True)
-    ws = wb.create_sheet("Дома Москвы")
-    ws.freeze_panes = "A2"
+    header_font = Font(bold=True)
+    top = Alignment(vertical="top")
+    wrap = Alignment(wrap_text=True, vertical="top")
+    header_align = Alignment(wrap_text=True, vertical="center")
 
-    header_font = Font(bold=True, color="FFFFFF", size=11)
-    header_fill = PatternFill("solid", fgColor="305496")
-    header_align = Alignment(horizontal="center", vertical="center", wrap_text=True)
-    thin = Side(style="thin", color="B0B0B0")
-    header_border = Border(left=thin, right=thin, top=thin, bottom=thin)
+    for col_idx, name in enumerate(COLUMNS, start=1):
+        c = ws.cell(row=1, column=col_idx, value=name)
+        c.font = header_font
+        c.alignment = header_align
 
-    center_align = Alignment(horizontal="center", vertical="center")
-    default_align = Alignment(vertical="center")
+    ser_col = COLUMNS.index("ser_name") + 1
+    subser_col = COLUMNS.index("subser_name") + 1
 
-    for idx, (_, _, _, width) in enumerate(COLUMNS, start=1):
-        ws.column_dimensions[get_column_letter(idx)].width = width
-
-    header = []
-    for _, title, _, _ in COLUMNS:
-        cell = WriteOnlyCell(ws, value=title)
-        cell.font = header_font
-        cell.fill = header_fill
-        cell.alignment = header_align
-        cell.border = header_border
-        header.append(cell)
-    ws.append(header)
-
-    total = len(rows)
-    for row_idx, house in enumerate(rows, start=1):
-        row_cells = []
-        for resolver, _, dtype, _ in COLUMNS:
-            raw = resolver(house) if callable(resolver) else house.get(resolver)
-            cell = WriteOnlyCell(ws, value=None)
-            cell.alignment = default_align
-
-            if raw is None or raw == "":
-                cell.value = None
-            elif dtype == "int":
-                try:
-                    cell.value = int(raw)
-                    cell.number_format = "0"
-                    cell.alignment = center_align
-                except (TypeError, ValueError):
-                    # fallback: вытащим первое число из строки
-                    v = _to_int(raw)
-                    if v is not None:
-                        cell.value = v
-                        cell.number_format = "0"
-                        cell.alignment = center_align
-                    else:
-                        cell.value = str(raw)
-            elif dtype == "float":
-                try:
-                    cell.value = float(raw)
-                    cell.number_format = "0.00"
-                    cell.alignment = center_align
-                except (TypeError, ValueError):
-                    cell.value = str(raw)
+    for row_idx, row in enumerate(items, start=2):
+        for col_idx, key in enumerate(COLUMNS, start=1):
+            val = cell_value(row.get(key))
+            cell = ws.cell(row=row_idx, column=col_idx, value=val)
+            if col_idx in (ser_col, subser_col):
+                cell.alignment = wrap
             else:
-                cell.value = str(raw)
-            row_cells.append(cell)
-        ws.append(row_cells)
-        if row_idx % 2000 == 0:
-            print(f"  записано {row_idx}/{total}")
+                cell.alignment = top
 
-    last_col = get_column_letter(len(COLUMNS))
-    ws.auto_filter.ref = f"A1:{last_col}{total + 1}"
+    last_row = len(items) + 1
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = f"A1:{get_column_letter(len(COLUMNS))}{last_row}"
 
-    print(f"Сохраняю {args.output}...")
-    wb.save(args.output)
-    size_mb = args.output.stat().st_size / (1024 * 1024)
-    print(f"Готово! {total} строк, {size_mb:.1f} MB")
+    for i, name in enumerate(COLUMNS, start=1):
+        ws.column_dimensions[get_column_letter(i)].width = WIDTHS.get(name, 14)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    wb.save(out_path)
+    print(f"Записано строк: {len(items)}, файл: {out_path.resolve()}")
 
 
 if __name__ == "__main__":
