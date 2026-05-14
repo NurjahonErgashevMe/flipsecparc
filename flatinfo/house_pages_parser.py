@@ -32,6 +32,7 @@ HEADERS = {
 
 _DIR = Path(__file__).resolve().parent
 DEFAULT_OUTPUT_PATH = _DIR / "house_pages_result.json"
+DEFAULT_SOURCE_JSON_PATH = _DIR / "result.json"
 LOG_PATH = _DIR / "house_pages_parser.log"
 FAILED_HIDS_PATH = _DIR / "house_pages_failed_hids.txt"
 FAILED_DETAILS_PATH = _DIR / "house_pages_failed_details.jsonl"
@@ -50,6 +51,8 @@ RECOVERY_PAUSE_SECONDS = 5.0
 FetchStatus = Literal["ok", "not_found", "error"]
 FALLBACK_EMPTY = ""
 RUNTIME_COOKIE = ""
+ALLOWED_CITY_IDS = {"1", "12552", "12565"}
+DISALLOWED_STREET_IDS = {"3745"}
 
 
 class _FlushFileHandler(logging.FileHandler):
@@ -332,6 +335,47 @@ def _process_result(
     )
 
 
+def matches_target(item: dict[str, Any]) -> bool:
+    return str(item.get("city_id")) in ALLOWED_CITY_IDS and str(
+        item.get("street_id")
+    ) not in DISALLOWED_STREET_IDS
+
+
+def _load_source_hids(source_path: Path, only_target: bool) -> list[int]:
+    if not source_path.is_file():
+        raise FileNotFoundError(f"Файл не найден: {source_path}")
+
+    raw = source_path.read_text(encoding="utf-8")
+    data = json.loads(raw)
+    if not isinstance(data, list):
+        raise ValueError("Ожидается JSON-массив домов в result.json")
+
+    kept: list[int] = []
+    filtered_count = 0
+    for item in data:
+        if not isinstance(item, dict):
+            continue
+        if only_target and not matches_target(item):
+            continue
+        filtered_count += 1
+        hid = item.get("house_id")
+        if isinstance(hid, int):
+            kept.append(hid)
+        elif isinstance(hid, str) and hid.isdigit():
+            kept.append(int(hid))
+
+    unique_hids = sorted(set(kept))
+    logging.info(
+        "Источник %s: всего записей=%s | после фильтра only_target=%s -> %s | уникальных hid=%s",
+        source_path.resolve(),
+        len(data),
+        only_target,
+        filtered_count,
+        len(unique_hids),
+    )
+    return unique_hids
+
+
 def _run_hids_batch(
     hids: list[int],
     rows: list[dict[str, Any]],
@@ -430,14 +474,13 @@ def _run_hids_batch(
     return failed_hids, counters
 
 
-def run_range(hid_start: int, hid_end: int, workers: int, output_path: Path) -> None:
-    if hid_end < hid_start:
-        raise ValueError("--end не может быть меньше --start")
+def run_hids(hids: list[int], workers: int, output_path: Path) -> None:
+    if not hids:
+        raise ValueError("Список hid пустой, нечего парсить")
     if workers <= 0:
         raise ValueError("--workers должен быть > 0")
 
-    all_hids = list(range(hid_start, hid_end + 1))
-    total = len(all_hids)
+    total = len(hids)
     started = time.time()
     rows: list[dict[str, Any]] = []
     rounds_total = 0
@@ -446,7 +489,7 @@ def run_range(hid_start: int, hid_end: int, workers: int, output_path: Path) -> 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     FAILED_DETAILS_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    logging.info("Старт парсинга страниц домов: hid=%s-%s | всего=%s | workers=%s", hid_start, hid_end, total, workers)
+    logging.info("Старт парсинга страниц домов: всего hid=%s | workers=%s", total, workers)
     logging.info(
         "Файлы: output=%s | log=%s | failed_hids=%s | failed_details=%s",
         output_path.resolve(),
@@ -457,7 +500,7 @@ def run_range(hid_start: int, hid_end: int, workers: int, output_path: Path) -> 
 
     with open(FAILED_DETAILS_PATH, "w", encoding="utf-8") as error_out:
         failed_hids, _ = _run_hids_batch(
-            hids=all_hids,
+            hids=hids,
             rows=rows,
             workers=workers,
             error_out=error_out,
@@ -533,8 +576,21 @@ def run_range(hid_start: int, hid_end: int, workers: int, output_path: Path) -> 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Парсер страниц домов flatinfo (14 полей + house_id)")
-    parser.add_argument("--start", type=int, default=DEFAULT_HID_START, help="Начальный hid (включительно)")
-    parser.add_argument("--end", type=int, default=DEFAULT_HID_END, help="Конечный hid (включительно)")
+    parser.add_argument(
+        "-i",
+        "--input-json",
+        type=Path,
+        default=DEFAULT_SOURCE_JSON_PATH,
+        help="Источник house_id (result.json от основного парсера)",
+    )
+    parser.add_argument(
+        "--only-target",
+        action=argparse.BooleanOptionalAction,
+        default=True,
+        help="Фильтр city_id/street_id как в --only-target (по умолчанию включен)",
+    )
+    parser.add_argument("--start", type=int, default=None, help="Ручной начальный hid (если нужен диапазон)")
+    parser.add_argument("--end", type=int, default=None, help="Ручной конечный hid (если нужен диапазон)")
     parser.add_argument("-w", "--workers", type=int, default=DEFAULT_WORKERS, help="Количество воркеров")
     parser.add_argument("-o", "--output", type=Path, default=DEFAULT_OUTPUT_PATH, help="Выходной JSON")
     parser.add_argument(
@@ -555,12 +611,17 @@ def main() -> None:
         logging.info("Cookie не задан. Если будут 403/antibot, запусти с --cookie или FLATINFO_COOKIE.")
 
     try:
-        run_range(
-            hid_start=args.start,
-            hid_end=args.end,
-            workers=args.workers,
-            output_path=args.output,
-        )
+        if args.start is not None or args.end is not None:
+            if args.start is None or args.end is None:
+                raise ValueError("Для диапазона нужно указать оба аргумента: --start и --end")
+            if args.end < args.start:
+                raise ValueError("--end не может быть меньше --start")
+            hids = list(range(args.start, args.end + 1))
+            logging.info("Режим диапазона включен вручную: %s-%s (hid=%s)", args.start, args.end, len(hids))
+        else:
+            hids = _load_source_hids(args.input_json, args.only_target)
+
+        run_hids(hids=hids, workers=args.workers, output_path=args.output)
     except Exception as exc:
         logging.exception("Критическая ошибка: %s", exc)
         raise SystemExit(1) from exc
