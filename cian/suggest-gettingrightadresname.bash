@@ -1,0 +1,13 @@
+curl 'https://suggest-maps.yandex.ru/v1/suggest?apikey=7a8defd8-9fea-4454-a450-6e9d1083ead0&types=geo&text=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9E%D1%80%D1%83%D0%B6%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%20%D0%B4%D0%BE%D0%BC%2025%20%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5%201%D0%91&lang=ru_RU&results=10&origin=jsapi2Geocoder&print_address=1&bbox=37.967428%2C56.021224%2C36.803101%2C55.142175&strict_bounds=0' \
+  -H 'Accept: */*' \
+  -H 'Accept-Language: en,ru;q=0.9,en-US;q=0.8,uz;q=0.7' \
+  -H 'Connection: keep-alive' \
+  -H 'Origin: https://www.cian.ru' \
+  -H 'Referer: https://www.cian.ru/' \
+  -H 'Sec-Fetch-Dest: empty' \
+  -H 'Sec-Fetch-Mode: cors' \
+  -H 'Sec-Fetch-Site: cross-site' \
+  -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36' \
+  -H 'sec-ch-ua: "Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"'

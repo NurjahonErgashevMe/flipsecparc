@@ -45,6 +45,8 @@ RECOVERY_PAUSE_SECONDS = 5.0
 
 FetchStatus = Literal["residential", "not_residential", "error"]
 
+MOSCOW_CITY_ID = "1"
+
 
 class _FlushFileHandler(logging.FileHandler):
     def emit(self, record: logging.LogRecord) -> None:
@@ -107,6 +109,10 @@ def is_residential(data: dict[str, Any]) -> bool:
     return _normalize_jil_type(data.get("jil_type")) == "Жилой"
 
 
+def is_moscow(data: dict[str, Any]) -> bool:
+    return str(data.get("city_id", "")).strip() == MOSCOW_CITY_ID
+
+
 def fetch_house(hid: int, timeout: float = REQUEST_TIMEOUT) -> FetchResult:
     session = _get_session()
     last_error_type: str | None = None
@@ -121,7 +127,7 @@ def fetch_house(hid: int, timeout: float = REQUEST_TIMEOUT) -> FetchResult:
             payload = response.json()
             if not isinstance(payload, dict):
                 raise ValueError("JSON не объект")
-            if is_residential(payload):
+            if is_residential(payload) and is_moscow(payload):
                 return FetchResult(hid=hid, status="residential", data=payload, attempts=attempt)
             return FetchResult(hid=hid, status="not_residential", attempts=attempt, http_status=response.status_code)
         except (requests.RequestException, json.JSONDecodeError, ValueError) as exc:
@@ -391,7 +397,9 @@ def run_range(hid_start: int, hid_end: int, out_path: Path, workers: int) -> Non
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Парсинг flatinfo по hid (сохраняем только jil_type=Жилой)")
+    parser = argparse.ArgumentParser(
+        description="Парсинг flatinfo по hid (только Москва city_id=1, jil_type=Жилой)"
+    )
     parser.add_argument("--start", type=int, default=HID_START, help="Начальный hid (включительно)")
     parser.add_argument("--end", type=int, default=HID_END, help="Конечный hid (включительно)")
     parser.add_argument("-o", "--output", type=Path, default=OUTPUT_PATH, help="Выходной JSON")

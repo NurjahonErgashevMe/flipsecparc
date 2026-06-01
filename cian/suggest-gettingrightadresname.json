@@ -1,0 +1,634 @@
+{
+  "suggest_reqid": "1780245131066987-1086049397-suggest-maps-yp-7",
+  "results": [
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1Б",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house"
+          ],
+          "distance": {
+              "value": 25275.22548,
+              "text": "25.28 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1Б",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1Б",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1Б, подъезд 10",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25274.80943,
+              "text": "25.27 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1Б, подъезд 10",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1Б",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "10",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1Б, подъезд 9",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25266.69879,
+              "text": "25.27 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1Б, подъезд 9",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1Б",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "9",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1В",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house"
+          ],
+          "distance": {
+              "value": 25232.94507,
+              "text": "25.23 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1В",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1В",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1А",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house"
+          ],
+          "distance": {
+              "value": 25268.59764,
+              "text": "25.27 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1А",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1А",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1, подъезд 4",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25247.91281,
+              "text": "25.25 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1, подъезд 4",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "4",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1А, подъезд 8",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25261.31355,
+              "text": "25.26 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1А, подъезд 8",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1А",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "8",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1В, подъезд 1",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25225.827,
+              "text": "25.23 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1В, подъезд 1",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1В",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "1",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1, подъезд 6",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25254.24549,
+              "text": "25.25 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1, подъезд 6",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "6",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      },
+      {
+          "title": {
+              "text": "Оружейный переулок, 25с1, подъезд 5",
+              "hl": [
+                  {
+                      "begin": 0,
+                      "end": 9
+                  },
+                  {
+                      "begin": 10,
+                      "end": 18
+                  },
+                  {
+                      "begin": 20,
+                      "end": 22
+                  }
+              ]
+          },
+          "subtitle": {
+              "text": "Москва"
+          },
+          "tags": [
+              "house",
+              "entrance"
+          ],
+          "distance": {
+              "value": 25251.5212,
+              "text": "25.25 км"
+          },
+          "address": {
+              "formatted_address": "Москва, Оружейный переулок, 25с1, подъезд 5",
+              "component": [
+                  {
+                      "name": "Россия",
+                      "kind": [
+                          "COUNTRY"
+                      ]
+                  },
+                  {
+                      "name": "Москва",
+                      "kind": [
+                          "LOCALITY"
+                      ]
+                  },
+                  {
+                      "name": "Оружейный переулок",
+                      "kind": [
+                          "STREET"
+                      ]
+                  },
+                  {
+                      "name": "25с1",
+                      "kind": [
+                          "HOUSE"
+                      ]
+                  },
+                  {
+                      "name": "5",
+                      "kind": [
+                          "ENTRANCE"
+                      ]
+                  }
+              ]
+          }
+      }
+  ]
+}

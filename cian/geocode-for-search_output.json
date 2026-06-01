@@ -1,0 +1,55 @@
+{
+    "geo": {
+        "lat": 55.810794,
+        "lng": 37.79172
+    },
+    "text": "Россия, Москва, Щёлковское шоссе, 59",
+    "isParsed": true,
+    "details": [
+        {
+            "id": 1,
+            "name": "Москва",
+            "fullName": "Москва",
+            "geoType": "Location",
+            "locationInfo": {
+                "text": "Москва",
+                "hasMetro": true,
+                "hasHighway": false,
+                "hasDistricts": true,
+                "parentId": null,
+                "mainTownId": null,
+                "lat": 55.7557,
+                "lng": 37.6213,
+                "boundedBy": {
+                    "lowerCorner": {
+                        "lat": 55.142175,
+                        "lng": 36.803101
+                    },
+                    "upperCorner": {
+                        "lat": 56.021224,
+                        "lng": 37.967428
+                    }
+                }
+            }
+        },
+        {
+            "id": 2466,
+            "name": "Щелковское шоссе",
+            "fullName": "Щелковское шоссе",
+            "geoType": "Street",
+            "locationInfo": null
+        },
+        {
+            "id": 83138,
+            "name": "59",
+            "fullName": "59",
+            "geoType": "House",
+            "locationInfo": null
+        }
+    ],
+    "countryId": 138,
+    "regionId": 1,
+    "microDistricts": [],
+    "geoLocationCatalogLink": null,
+    "undergroundDetails": null
+}

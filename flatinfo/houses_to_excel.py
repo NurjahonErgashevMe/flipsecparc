@@ -26,7 +26,7 @@ except ImportError:
 
 _DIR = Path(__file__).resolve().parent
 
-ALLOWED_CITY_IDS = {"1", "12552", "12565"}
+MOSCOW_CITY_ID = "1"
 DISALLOWED_STREET_IDS = {"3745"}
 
 # (заголовок в Excel, внутренний ключ строки)
@@ -134,7 +134,7 @@ def _normalize_jil(value: Any) -> str:
 
 
 def matches_target(item: dict[str, Any]) -> bool:
-    return str(item.get("city_id")) in ALLOWED_CITY_IDS and str(
+    return str(item.get("city_id", "")).strip() == MOSCOW_CITY_ID and str(
         item.get("street_id")
     ) not in DISALLOWED_STREET_IDS
 
@@ -144,7 +144,7 @@ def is_moscow_residential(item: dict[str, Any]) -> bool:
         return False
     cid = str(item.get("city_id", "")).strip()
     city = (item.get("city") or "").strip()
-    return cid == "1" or city == "Москва"
+    return cid == MOSCOW_CITY_ID or city == "Москва"
 
 
 def _series_text(item: dict[str, Any]) -> str:

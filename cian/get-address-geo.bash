@@ -1,0 +1,14 @@
+curl 'https://api.cian.ru/geo/v1/geocode-cached/?request=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%A9%D1%91%D0%BB%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%BE%D0%B5%20%D1%88%D0%BE%D1%81%D1%81%D0%B5%2C%2059' \
+  -H 'accept: */*' \
+  -H 'accept-language: en,ru;q=0.9,en-US;q=0.8,uz;q=0.7' \
+  -b '_CIAN_GK=c0bad9b2-90d6-4e8b-aa7d-b0ecde779ef1; _gcl_au=1.1.1850288146.1774652837; tmr_lvid=fda9b100123b872c24971d320aa0d0de; tmr_lvidTS=1774652849228; cookie_agreement_accepted=1; login_mro_popup=1; _ga=GA1.1.1328279983.1774652981; uxfb_usertype=searcher; _ym_uid=1762188778233509574; _ym_d=1777289587; frontend-offer-card.builder_chat_onboarding_shown=1; cian_ruid=139763160; session_region_name=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0; forever_region_id=1; forever_region_name=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0; uxfb_card_satisfaction=%5B329364962%2C329480109%2C320580206%2C320396355%2C327003282%5D; frontend-offer-card.consultant_chat_onboarding_shown=1; frontend-offer-card.newbuilding_broker_onboarding_shown=1; uxs_uid=0d8dc130-480b-11f1-9dc9-37f990bc29a4; transport-accessibility_onboarding_counter=3; DMIR_AUTH=xBAJlTU3lhGvprth%2FzVQ9AbPEk73syzSEvyGlfSIj%2FN3hewyIJstrWKhjPdv8ea2afRa8R%2Ff7GOAwM9KbjIH%2BBPRgRSoET5VjBR9DwgXeHPfe2vTC4M6lxPo%2F2FbZ2I8wm3QUv9y1DA8%2B8dS91SVmYSVBPkmzlwToEuOL%2BvvwON%2FOWy%2BrGnxP5b2a4ECZD7r; sopr_utm=%7B%22utm_source%22%3A+%22google%22%2C+%22utm_medium%22%3A+%22organic%22%7D; frontend-serp.offer_chat_onboarding_shown=1; _ga_L109H0KCP9=GS2.1.s1779744423$o2$g0$t1779744427$j56$l0$h0; should_show_pulse_animation=1; hide_pulse_animation=1; WBRMVisitLast_utm=; WBRMVisitLast_referrer=https%3A%2F%2Fwww.google.com%2F; WBRMVisitFirst_utm=; WBRMVisitFirst_referrer=https%3A%2F%2Fwww.google.com%2F; domain_sid=qOMZHPQNuvMLB7wgi-JNg%3A1780156613364; session_main_town_region_id=1; _ym_isad=2; sopr_session=8bf37ede4f1e428b; _yasc=YcChhpeOKfYsl6+tNur8auRqAgsm9l+A/2ugOO1f4GM8XPOVDB98cppcpvoqq1N3+kc5tA==.MTc4MDI0MzM5MDg0Mg==; cookieUserID=139763160; _yasc=clW5Jsb8XojDskcKtNg1epZR0E6hNnRI8VFu6Hy5ovaP7cGSG2jJMXsgar8ZzumLWYMjqg==.MTc4MDI0MzM5MDg2OQ==; _ym_visorc=b; session_region_id=4593; _ga_3369S417EL=GS2.1.s1780243388$o95$g1$t1780244318$j44$l0$h0' \
+  -H 'origin: https://www.cian.ru' \
+  -H 'priority: u=1, i' \
+  -H 'referer: https://www.cian.ru/' \
+  -H 'sec-ch-ua: "Chromium";v="148", "Google Chrome";v="148", "Not/A)Brand";v="99"' \
+  -H 'sec-ch-ua-mobile: ?0' \
+  -H 'sec-ch-ua-platform: "Windows"' \
+  -H 'sec-fetch-dest: empty' \
+  -H 'sec-fetch-mode: cors' \
+  -H 'sec-fetch-site: same-site' \
+  -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36'
