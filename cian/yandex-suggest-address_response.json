@@ -1,0 +1,673 @@
+{
+    "suggest_reqid": "1780428606272325-259672145-rvnyts3cmsogxaqj",
+    "results": [
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house"
+            ],
+            "distance": {
+                "value": 18069.27612,
+                "text": "18.07 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 1",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18027.17987,
+                "text": "18.03 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 1",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "1",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 2",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18039.14771,
+                "text": "18.04 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 2",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "2",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 3",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18053.62024,
+                "text": "18.05 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 3",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "3",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 4",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18066.04347,
+                "text": "18.07 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 4",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "4",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 5",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18080.89901,
+                "text": "18.08 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 5",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "5",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 6",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18095.40323,
+                "text": "18.10 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 6",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "6",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 7",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18108.29984,
+                "text": "18.11 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 7",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "7",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "title": {
+                "text": "улица Академика Павлова, 13, подъезд 8",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 5
+                    },
+                    {
+                        "begin": 6,
+                        "end": 15
+                    },
+                    {
+                        "begin": 16,
+                        "end": 23
+                    },
+                    {
+                        "begin": 25,
+                        "end": 27
+                    }
+                ]
+            },
+            "subtitle": {
+                "text": "Москва",
+                "hl": [
+                    {
+                        "begin": 0,
+                        "end": 6
+                    }
+                ]
+            },
+            "tags": [
+                "house",
+                "entrance"
+            ],
+            "distance": {
+                "value": 18121.61566,
+                "text": "18.12 км"
+            },
+            "address": {
+                "formatted_address": "Москва, улица Академика Павлова, 13, подъезд 8",
+                "component": [
+                    {
+                        "name": "Россия",
+                        "kind": [
+                            "COUNTRY"
+                        ]
+                    },
+                    {
+                        "name": "Москва",
+                        "kind": [
+                            "LOCALITY"
+                        ]
+                    },
+                    {
+                        "name": "улица Академика Павлова",
+                        "kind": [
+                            "STREET"
+                        ]
+                    },
+                    {
+                        "name": "13",
+                        "kind": [
+                            "HOUSE"
+                        ]
+                    },
+                    {
+                        "name": "8",
+                        "kind": [
+                            "ENTRANCE"
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}

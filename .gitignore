@@ -4,3 +4,11 @@ domclick/
 
 __pycache__/
 flatinfo/*.log
+
+cian/cookies.txt
+cian/.env
+cian/result.jsonl
+cian/failed.jsonl
+cian/checkpoint.json
+cian/result.json
+cian/logs.log

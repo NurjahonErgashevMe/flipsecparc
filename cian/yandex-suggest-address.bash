@@ -1,4 +1,4 @@
-curl 'https://suggest-maps.yandex.ru/v1/suggest?apikey=7a8defd8-9fea-4454-a450-6e9d1083ead0&types=geo&text=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9E%D1%80%D1%83%D0%B6%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%20%D0%B4%D0%BE%D0%BC%2025%20%D1%81%D1%82%D1%80%D0%BE%D0%B5%D0%BD%D0%B8%D0%B5%201%D0%91&lang=ru_RU&results=10&origin=jsapi2Geocoder&print_address=1&bbox=37.967428%2C56.021224%2C36.803101%2C55.142175&strict_bounds=0' \
+curl 'https://suggest-maps.yandex.ru/v1/suggest?apikey=7a8defd8-9fea-4454-a450-6e9d1083ead0&types=geo&text=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F%2C%20%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B0%20%D0%B4.13&lang=ru_RU&results=10&origin=jsapi2Geocoder&print_address=1&bbox=37.967428%2C56.021224%2C36.803101%2C55.142175&strict_bounds=0' \
   -H 'Accept: */*' \
   -H 'Accept-Language: en,ru;q=0.9,en-US;q=0.8,uz;q=0.7' \
   -H 'Connection: keep-alive' \
