@@ -1,0 +1,175 @@
+{
+    "totalCount": 48,
+    "roomCounts": [
+        {
+            "offersCount": 32,
+            "roomsCount": "two"
+        },
+        {
+            "offersCount": 16,
+            "roomsCount": "three"
+        }
+    ],
+    "statusCounts": [
+        {
+            "status": "published",
+            "offersCount": 3
+        },
+        {
+            "status": "deactivated",
+            "offersCount": 45
+        }
+    ],
+    "locations": [
+        {
+            "name": "В этом доме",
+            "value": "sameHouse"
+        }
+    ],
+    "activeFiltersValues": {
+        "locations": "sameHouse"
+    },
+    "offers": [
+        {
+            "id": 330563025,
+            "link": "/sale/flat/330563025/?mlSearchSessionGuid=d0d9da1d83b11cb710fd476579137fc9",
+            "title": "45 м², 2-комн., 3/9 этаж",
+            "prices": {
+                "price": "17,0 млн ₽",
+                "priceSqm": "377 555 ₽/м²",
+                "priceDiff": "noChange"
+            },
+            "exposition": "4 дня",
+            "status": "published",
+            "dateStart": "29 мая 2026",
+            "previewPhoto": "https://images.cdn-cian.ru/images/2890163101-2.jpg"
+        },
+        {
+            "id": 330141692,
+            "link": "/sale/flat/330141692/?mlSearchSessionGuid=d0d9da1d83b11cb710fd476579137fc9",
+            "title": "59,9 м², 3-комн., 8/9 этаж",
+            "prices": {
+                "price": "19,0 млн ₽",
+                "priceSqm": "317 195 ₽/м²",
+                "priceDiff": "noChange"
+            },
+            "exposition": "15 дней",
+            "status": "published",
+            "dateStart": "18 мая 2026",
+            "previewPhoto": "https://images.cdn-cian.ru/images/2881953441-2.jpg"
+        },
+        {
+            "id": 324873307,
+            "link": "/sale/flat/324873307/?mlSearchSessionGuid=d0d9da1d83b11cb710fd476579137fc9",
+            "title": "59,3 м², 3-комн., 8/9 этаж",
+            "prices": {
+                "price": "19,0 млн ₽",
+                "priceSqm": "320 404 ₽/м²",
+                "priceDiff": "decrease"
+            },
+            "exposition": "172 дня",
+            "status": "published",
+            "dateStart": "9 дек 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2731242098-2.jpg"
+        },
+        {
+            "id": 322634566,
+            "title": "58,4 м², 3-комн., 2/9 этаж",
+            "prices": {
+                "price": "19,0 млн ₽",
+                "priceSqm": "325 342 ₽/м²",
+                "priceDiff": "decrease"
+            },
+            "exposition": "108 дней",
+            "status": "deactivated",
+            "dateStart": "8 окт 2025",
+            "dateEnd": "26 янв 2026",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2657365406-2.jpg?dh=1407233209"
+        },
+        {
+            "id": 324356050,
+            "title": "59,3 м², 3-комн., 8/9 этаж",
+            "prices": {
+                "price": "20,0 млн ₽",
+                "priceSqm": "337 268 ₽/м²",
+                "priceDiff": "noChange"
+            },
+            "exposition": "7 дней",
+            "status": "deactivated",
+            "dateStart": "26 ноя 2025",
+            "dateEnd": "2 дек 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2713901414-2.jpg?dh=1648060078"
+        },
+        {
+            "id": 318524439,
+            "title": "45,5 м², 2-комн., 7/9 этаж",
+            "prices": {
+                "price": "13,2 млн ₽",
+                "priceSqm": "290 109 ₽/м²",
+                "priceDiff": "noChange"
+            },
+            "exposition": "54 дня",
+            "status": "deactivated",
+            "dateStart": "8 июн 2025",
+            "dateEnd": "1 авг 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2517033222-2.jpg?dh=-138252640"
+        },
+        {
+            "id": 280943603,
+            "title": "43,2 м², 2-комн., 1/9 этаж",
+            "prices": {
+                "price": "11,8 млн ₽",
+                "priceSqm": "273 148 ₽/м²",
+                "priceDiff": "decrease"
+            },
+            "exposition": "206 дней",
+            "status": "deactivated",
+            "dateStart": "27 окт 2024",
+            "dateEnd": "20 мая 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2414330695-2.jpg?dh=-2068257810"
+        },
+        {
+            "id": 315194643,
+            "title": "60 м², 3-комн., 1/9 этаж",
+            "prices": {
+                "price": "16,0 млн ₽",
+                "priceSqm": "266 666 ₽/м²",
+                "priceDiff": "noChange"
+            },
+            "exposition": "17 дней",
+            "status": "deactivated",
+            "dateStart": "20 мар 2025",
+            "dateEnd": "5 апр 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2433178775-2.jpg?dh=-673486221"
+        },
+        {
+            "id": 296921946,
+            "title": "45,4 м², 2-комн., 2/9 этаж",
+            "prices": {
+                "price": "12,0 млн ₽",
+                "priceSqm": "264 096 ₽/м²",
+                "priceDiff": "decrease"
+            },
+            "exposition": "116 дней",
+            "status": "deactivated",
+            "dateStart": "17 ноя 2024",
+            "dateEnd": "2 апр 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2070544263-2.jpg?dh=-1972971492"
+        },
+        {
+            "id": 307539420,
+            "title": "45 м², 2-комн., 5/9 этаж",
+            "prices": {
+                "price": "15,0 млн ₽",
+                "priceSqm": "333 333 ₽/м²",
+                "priceDiff": "decrease"
+            },
+            "exposition": "79 дней",
+            "status": "deactivated",
+            "dateStart": "4 ноя 2024",
+            "dateEnd": "26 янв 2025",
+            "previewPhoto": "https://images.cdn-cian.ru/images/kvartira-moskva-ulica-akademika-pavlova-2314654274-2.jpg?dh=-1678369191"
+        }
+    ],
+    "mlSearchSessionGuid": "d0d9da1d83b11cb710fd476579137fc9"
+}

@@ -48,77 +48,76 @@ def iter_input_houses(
 
 
 class ResultWriter:
-    """Потокобезопасная запись JSONL + чекпоинт обработанных house_id."""
+    """Потокобезопасная запись JSONL."""
 
     def __init__(
         self,
         success_path: Path,
         failed_path: Path,
-        checkpoint_path: Path,
     ) -> None:
         self._success_path = success_path
         self._failed_path = failed_path
-        self._checkpoint_path = checkpoint_path
         self._lock = threading.Lock()
-        self._processed_ids = self._load_checkpoint()
-        self._writes_since_checkpoint = 0
-        self._checkpoint_every = 25
+        
         success_path.parent.mkdir(parents=True, exist_ok=True)
         failed_path.parent.mkdir(parents=True, exist_ok=True)
 
+        self._success_ids: set[int] = set()
+        self._failed_ids: set[int] = set()
+        self._load_state()
+
     @property
     def processed_ids(self) -> set[int]:
-        return self._processed_ids
+        return self._success_ids | self._failed_ids
 
-    def _load_checkpoint(self) -> set[int]:
-        if not self._checkpoint_path.is_file():
-            return set()
-        try:
-            data = json.loads(self._checkpoint_path.read_text(encoding="utf-8"))
-            return {int(x) for x in data.get("processed_house_ids", [])}
-        except (json.JSONDecodeError, TypeError, ValueError):
-            log.warning("Повреждён checkpoint, начинаем с нуля")
-            return set()
+    def _load_state(self) -> None:
+        if self._success_path.is_file():
+            with self._success_path.open(encoding="utf-8") as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    try:
+                        data = json.loads(line)
+                        self._success_ids.add(int(data["source"]["house_id"]))
+                    except Exception:
+                        pass
+                        
+        if self._failed_path.is_file():
+            with self._failed_path.open(encoding="utf-8") as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    try:
+                        data = json.loads(line)
+                        self._failed_ids.add(int(data["source"]["house_id"]))
+                    except Exception:
+                        pass
 
-    def _save_checkpoint(self) -> None:
-        payload = {
-            "processed_house_ids": sorted(self._processed_ids),
-            "count": len(self._processed_ids),
-        }
-        self._checkpoint_path.write_text(
-            json.dumps(payload, ensure_ascii=False),
-            encoding="utf-8",
-        )
-
-    def _commit(self, house_id: int, path: Path, line: str) -> None:
+    def _commit(self, house_id: int, path: Path, line: str, is_success: bool) -> None:
         with path.open("a", encoding="utf-8") as fh:
             fh.write(line + "\n")
-        self._processed_ids.add(house_id)
-        self._writes_since_checkpoint += 1
-        if self._writes_since_checkpoint >= self._checkpoint_every:
-            self._save_checkpoint()
-            self._writes_since_checkpoint = 0
+        if is_success:
+            self._success_ids.add(house_id)
+        else:
+            self._failed_ids.add(house_id)
 
     def flush_checkpoint(self) -> None:
-        with self._lock:
-            if self._writes_since_checkpoint:
-                self._save_checkpoint()
-                self._writes_since_checkpoint = 0
+        pass
 
     def write_success(self, result: ParsedHouse) -> None:
         line = json.dumps(result.to_dict(), ensure_ascii=False)
         house_id = int(result.source["house_id"])
         with self._lock:
-            self._commit(house_id, self._success_path, line)
+            self._commit(house_id, self._success_path, line, True)
 
     def write_failure(self, result: FailedHouse) -> None:
         line = json.dumps(result.to_dict(), ensure_ascii=False)
         house_id = int(result.source["house_id"])
         with self._lock:
-            self._commit(house_id, self._failed_path, line)
+            self._commit(house_id, self._failed_path, line, False)
 
     def is_done(self, house_id: int) -> bool:
-        return house_id in self._processed_ids
+        return house_id in self.processed_ids
 
 
 def jsonl_to_json(jsonl_path: Path, json_path: Path) -> int:

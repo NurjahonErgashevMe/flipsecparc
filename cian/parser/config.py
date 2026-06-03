@@ -6,6 +6,22 @@ from pathlib import Path
 
 _DIR = Path(__file__).resolve().parent.parent
 
+def _load_env_file() -> None:
+    env_path = _DIR / ".env"
+    if env_path.is_file():
+        for line in env_path.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if "=" in line:
+                key, val = line.split("=", 1)
+                key = key.strip()
+                val = val.strip().strip('"').strip("'")
+                if key and key not in os.environ:
+                    os.environ[key] = val
+
+_load_env_file()
+
 # Границы Москвы для Yandex Suggest (как в браузере Cian)
 MOSCOW_BBOX = "37.967428,56.021224,36.803101,55.142175"
 
@@ -36,6 +52,7 @@ class Settings:
     workers: int
     offers_per_page: int
     moscow_only: bool
+    proxy_url: str | None = None
 
     @classmethod
     def from_env(
@@ -47,6 +64,7 @@ class Settings:
         request_timeout: float = 30.0,
         max_retries: int = 4,
         retry_base_delay: float = 0.5,
+        proxy_url: str | None = None,
     ) -> Settings:
         cookies = os.environ.get("CIAN_COOKIES", "").strip()
         if not cookies:
@@ -63,4 +81,5 @@ class Settings:
             workers=workers,
             offers_per_page=offers_per_page,
             moscow_only=moscow_only,
+            proxy_url=proxy_url or os.environ.get("CIAN_PROXY"),
         )

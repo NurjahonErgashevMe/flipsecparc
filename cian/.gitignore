@@ -1,9 +1,8 @@
 pipeline.md
-result.jsonl
-failed.jsonl
-checkpoint.json
+data/result.jsonl
+data/failed.jsonl
+data/result.json
 cookies.txt
 .env
 logs.log
 input.json
-result.json

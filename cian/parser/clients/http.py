@@ -22,6 +22,12 @@ class HttpClient:
     def __init__(self, settings: Settings) -> None:
         self._settings = settings
         self._session = requests.Session()
+        if settings.proxy_url:
+            log.info("Используется прокси для запросов: %s", settings.proxy_url)
+            self._session.proxies = {
+                "http": settings.proxy_url,
+                "https": settings.proxy_url,
+            }
 
     def request(
         self,

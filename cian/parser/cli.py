@@ -28,31 +28,34 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Парсер истории снятых объявлений Cian по адресам из JSON.",
     )
+    default_input = _DIR / "data" / "input_all.json"
+    if not default_input.is_file():
+        default_input = _DIR / "data" / "input.json"
+
     parser.add_argument(
         "-i",
         "--input",
         type=Path,
-        default=_DIR / "input.json",
+        default=default_input,
         help="Входной JSON (массив домов flatinfo)",
     )
     parser.add_argument(
         "-o",
         "--output",
         type=Path,
-        default=_DIR / "result.jsonl",
+        default=_DIR / "data" / "result.jsonl",
         help="Успешные результаты (JSONL, по строке на дом)",
     )
     parser.add_argument(
         "--failed",
         type=Path,
-        default=_DIR / "failed.jsonl",
+        default=_DIR / "data" / "failed.jsonl",
         help="Ошибки (JSONL)",
     )
     parser.add_argument(
-        "--checkpoint",
-        type=Path,
-        default=_DIR / "checkpoint.json",
-        help="Чекпоинт обработанных house_id",
+        "--retry-failed",
+        action="store_true",
+        help="Повторно запустить обработку для всех объявлений из failed.jsonl",
     )
     parser.add_argument(
         "-w",
@@ -85,6 +88,12 @@ def build_parser() -> argparse.ArgumentParser:
         help="Не фильтровать только Москву",
     )
     parser.add_argument(
+        "--proxy",
+        type=str,
+        default=None,
+        help="Прокси URL для запросов (например, http://user:pass@host:port)",
+    )
+    parser.add_argument(
         "-v",
         "--verbose",
         action="store_true",
@@ -92,8 +101,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub = parser.add_subparsers(dest="command")
 
     merge = sub.add_parser("merge", help="Собрать JSONL в один JSON-массив")
-    merge.add_argument("jsonl", type=Path, nargs="?", default=_DIR / "result.jsonl")
-    merge.add_argument("json", type=Path, nargs="?", default=_DIR / "result.json")
+    merge.add_argument("jsonl", type=Path, nargs="?", default=_DIR / "data" / "result.jsonl")
+    merge.add_argument("json", type=Path, nargs="?", default=_DIR / "data" / "result.json")
 
     return parser
 
@@ -103,6 +112,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         workers=args.workers,
         offers_per_page=args.offers_per_page,
         moscow_only=not args.all_cities,
+        proxy_url=args.proxy,
     )
     if not settings.cian_cookies:
         logging.error(
@@ -117,9 +127,32 @@ def cmd_run(args: argparse.Namespace) -> int:
         limit=args.limit,
         offset=args.offset,
     )
-    logging.info("К обработке: %s домов", len(houses))
 
-    writer = ResultWriter(args.output, args.failed, args.checkpoint)
+    if args.retry_failed:
+        failed_ids = set()
+        if args.failed.is_file():
+            import json
+            with args.failed.open(encoding="utf-8") as f:
+                for line in f:
+                    if not line.strip():
+                        continue
+                    try:
+                        data = json.loads(line)
+                        failed_ids.add(int(data["source"]["house_id"]))
+                    except Exception:
+                        pass
+        houses = [h for h in houses if h.house_id in failed_ids]
+        logging.info("К повторной обработке (failed): %s домов", len(houses))
+        
+        if args.failed.is_file():
+            import shutil
+            bak_path = args.failed.with_name(args.failed.name + ".bak")
+            shutil.copy(args.failed, bak_path)
+            args.failed.write_text("", encoding="utf-8")
+    else:
+        logging.info("К обработке: %s домов", len(houses))
+
+    writer = ResultWriter(args.output, args.failed)
     pipeline = HousePipeline(settings)
     runner = ParserRunner(settings, pipeline, writer)
     stats = runner.run(houses)
