@@ -172,8 +172,21 @@ def cmd_merge(args: argparse.Namespace) -> int:
     if not args.jsonl.is_file():
         logging.error("Файл не найден: %s", args.jsonl)
         return 1
-    count = jsonl_to_json(args.jsonl, args.json)
-    logging.info("Записано %s записей в %s", count, args.json)
+    stats = jsonl_to_json(args.jsonl, args.json)
+
+    logging.info("=" * 55)
+    logging.info("  ИТОГИ MERGE -> %s", args.json.name)
+    logging.info("=" * 55)
+    logging.info("  Домов всего:                  %s", stats["total_houses"])
+    logging.info("  Снятых публикаций всего:       %s", stats["total_deactivated_offers"])
+    logging.info("  Домов с публикациями:          %s", stats["houses_with_offers"])
+    logging.info("  Домов без публикаций:          %s", stats["houses_without_offers"])
+    logging.info("  Среднее публикаций на дом:     %s", stats["avg_offers_per_house"])
+    logging.info("  Макс. публикаций в одном доме: %s", stats["max_offers_in_house"])
+    logging.info("  Мин. публикаций в одном доме:  %s", stats["min_offers_in_house"])
+    if stats["skipped_lines"]:
+        logging.warning("  Пропущено битых строк:         %s", stats["skipped_lines"])
+    logging.info("=" * 55)
     return 0
 
 

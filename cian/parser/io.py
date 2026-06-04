@@ -120,15 +120,53 @@ class ResultWriter:
         return house_id in self.processed_ids
 
 
-def jsonl_to_json(jsonl_path: Path, json_path: Path) -> int:
+def jsonl_to_json(jsonl_path: Path, json_path: Path) -> dict[str, Any]:
+    """Читает JSONL, пишет JSON-массив и возвращает словарь со статистикой."""
     rows: list[dict[str, Any]] = []
+    skipped = 0
     with jsonl_path.open(encoding="utf-8") as fh:
-        for line in fh:
+        for line_no, line in enumerate(fh, 1):
             line = line.strip()
-            if line:
+            if not line:
+                continue
+            try:
                 rows.append(json.loads(line))
+            except json.JSONDecodeError:
+                log.warning("Пропущена битая строка #%s в %s", line_no, jsonl_path.name)
+                skipped += 1
+
     json_path.write_text(
         json.dumps(rows, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    return len(rows)
+
+    # --- статистика ---
+    total_houses = len(rows)
+    total_deactivated = 0
+    houses_with_offers = 0
+    offers_counts: list[int] = []
+
+    for row in rows:
+        deactivated = row.get("deactivated_offers", [])
+        cnt = len(deactivated) if isinstance(deactivated, list) else 0
+        total_deactivated += cnt
+        offers_counts.append(cnt)
+        if cnt > 0:
+            houses_with_offers += 1
+
+    houses_without_offers = total_houses - houses_with_offers
+    avg_offers = round(total_deactivated / total_houses, 2) if total_houses else 0
+    max_offers = max(offers_counts) if offers_counts else 0
+    min_offers = min(offers_counts) if offers_counts else 0
+
+    stats: dict[str, Any] = {
+        "total_houses": total_houses,
+        "total_deactivated_offers": total_deactivated,
+        "houses_with_offers": houses_with_offers,
+        "houses_without_offers": houses_without_offers,
+        "avg_offers_per_house": avg_offers,
+        "max_offers_in_house": max_offers,
+        "min_offers_in_house": min_offers,
+        "skipped_lines": skipped,
+    }
+    return stats
