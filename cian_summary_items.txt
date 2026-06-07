@@ -1,0 +1,143 @@
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Тип жилья
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Вторичка
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Общая площадь
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                84,6 м²
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Жилая площадь
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                56 м²
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Площадь кухни
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                12 м²
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Высота потолков
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                2,9 м
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Санузел
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                2 совмещенных
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Балкон/лоджия
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                1 лоджия
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Вид из окон
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Во двор
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Ремонт
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Евроремонт
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Год постройки
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                2014
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Строительная серия
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Индивидуальный проект
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Количество лифтов
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                1 пассажирский, 1 грузовой
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Тип перекрытий
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Железобетонные
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Подъезды
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                3
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Отопление
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Центральное
+                              </p>
+</div>
+---
+<div class="xa15a2ab7--_0523e--item" data-name="OfferSummaryInfoItem" data-testid="OfferSummaryInfoItem">
+<p class="xa15a2ab7--_7735e--color_text-secondary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Аварийность
+                              </p>
+<p class="xa15a2ab7--_7735e--color_text-primary-default xa15a2ab7--_2697e--lineHeight_6u xa15a2ab7--_2697e--fontWeight_normal xa15a2ab7--_2697e--fontSize_16px xa15a2ab7--_17731--display_block xa15a2ab7--dc75cc--text xa15a2ab7--dc75cc--text_letterSpacing__0">
+                                Нет
+                              </p>
+</div>
