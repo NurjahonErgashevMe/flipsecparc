@@ -22,6 +22,7 @@ class HttpClient:
     def __init__(self, settings: Settings) -> None:
         self._settings = settings
         self._session = requests.Session()
+        self._session.trust_env = False  # игнорировать NO_PROXY / HTTPS_PROXY из окружения
         if settings.proxy_url:
             log.info("Используется прокси для запросов: %s", settings.proxy_url)
             self._session.proxies = {

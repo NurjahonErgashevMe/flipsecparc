@@ -8,7 +8,7 @@ import sys
 from pathlib import Path
 
 from .config import Settings
-from .io import ResultWriter, jsonl_to_json, load_input_houses
+from .io import ResultWriter, json_to_excel, jsonl_to_json, load_input_houses
 from .runner import ParserRunner
 from .smoke_test import add_smoke_test_parser
 
@@ -118,9 +118,10 @@ def build_parser() -> argparse.ArgumentParser:
     )
     sub = parser.add_subparsers(dest="command")
 
-    merge = sub.add_parser("merge", help="Собрать JSONL в один JSON-массив")
+    merge = sub.add_parser("merge", help="Собрать JSONL в один JSON-массив + Excel")
     merge.add_argument("jsonl", type=Path, nargs="?", default=_DIR / "data" / "result.jsonl")
     merge.add_argument("json", type=Path, nargs="?", default=_DIR / "data" / "result.json")
+    merge.add_argument("--excel", type=Path, default=_DIR / "data" / "result.xlsx", help="Путь для Excel-файла")
 
     add_smoke_test_parser(sub)
 
@@ -214,6 +215,11 @@ def cmd_merge(args: argparse.Namespace) -> int:
     if stats["skipped_lines"]:
         logging.warning("  Пропущено битых строк:         %s", stats["skipped_lines"])
     logging.info("=" * 55)
+
+    logging.info("Генерация Excel -> %s", args.excel)
+    excel_stats = json_to_excel(args.json, args.excel)
+    logging.info("  Excel: строк=%s, файл=%s", excel_stats["total_rows"], excel_stats["excel_path"])
+
     return 0
 
 

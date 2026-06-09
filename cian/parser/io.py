@@ -170,3 +170,70 @@ def jsonl_to_json(jsonl_path: Path, json_path: Path) -> dict[str, Any]:
         "skipped_lines": skipped,
     }
     return stats
+
+
+def json_to_excel(json_path: Path, excel_path: Path) -> dict[str, Any]:
+    """Конвертирует result.json в Excel. Каждая строка — одно объявление."""
+    import pandas as pd
+
+    with json_path.open(encoding="utf-8") as f:
+        data = json.load(f)
+
+    rows: list[dict[str, Any]] = []
+
+    for house in data:
+        source = house.get("source", {})
+        geocode = house.get("geocode", {})
+
+        house_base = {
+            "house_id": source.get("house_id"),
+            "Адрес (source)": f"{source.get('city', '')}, {source.get('street', '')} {source.get('house_num', '')}".strip(", "),
+            "Адрес (геокод)": geocode.get("text", "") or house.get("yandex_formatted_address", ""),
+            "Год постройки (дом)": source.get("year"),
+            "Кол-во квартир": source.get("flats"),
+            "Тип дома (дом)": source.get("type"),
+            "Этажей": source.get("levels"),
+            "Серия": source.get("ser_name"),
+            "Объявлений всего": house.get("offers_total_count", 0),
+        }
+
+        offers = house.get("deactivated_offers") or []
+        if not offers:
+            continue
+
+        for offer in offers:
+            row = house_base.copy()
+
+            prices = offer.get("prices") or {}
+            tp = offer.get("title_parsed") or {}
+            details = offer.get("details") or {}
+            fp = details.get("features_parsed") or {}
+            address_detail = details.get("address", "")
+
+            row.update({
+                "offer_id": offer.get("id"),
+                "Адрес (объявление)": address_detail,
+                "Заголовок": offer.get("title", ""),
+                "Цена": prices.get("price", ""),
+                "Цена за м²": prices.get("priceSqm", ""),
+                "Экспозиция": offer.get("exposition", ""),
+                "Дата начала": offer.get("dateStart", ""),
+                "Дата окончания": offer.get("dateEnd", ""),
+                "Площадь общая, м²": tp.get("total_area_sqm"),
+                "Комнат": tp.get("rooms"),
+                "Этаж": tp.get("floor_current"),
+                "Этажей в доме": tp.get("floor_total"),
+                "Тип дома (объявл.)": fp.get("building_type"),
+                "Год постройки (объявл.)": fp.get("build_year"),
+                "Жилая площадь, м²": fp.get("living_area_sqm"),
+                "Площадь кухни, м²": fp.get("kitchen_area_sqm"),
+                "Ремонт": fp.get("renovation"),
+                "Вид из окон": fp.get("view_from_windows"),
+            })
+            rows.append(row)
+
+    df = pd.DataFrame(rows)
+    excel_path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_excel(excel_path, index=False, engine="openpyxl")
+
+    return {"total_rows": len(rows), "excel_path": str(excel_path)}
