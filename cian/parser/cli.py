@@ -1,15 +1,16 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
+import shutil
 import sys
 from pathlib import Path
 
 from .config import Settings
-from .io import jsonl_to_json, load_input_houses
-from .io import ResultWriter
-from .pipeline import HousePipeline
+from .io import ResultWriter, jsonl_to_json, load_input_houses
 from .runner import ParserRunner
+from .smoke_test import add_smoke_test_parser
 
 _DIR = Path(__file__).resolve().parent.parent
 
@@ -62,7 +63,24 @@ def build_parser() -> argparse.ArgumentParser:
         "--workers",
         type=int,
         default=16,
-        help="Число параллельных воркеров",
+        help="Число параллельных воркеров (дома)",
+    )
+    parser.add_argument(
+        "--detail-workers",
+        type=int,
+        default=32,
+        help="Число параллельных воркеров для details API",
+    )
+    parser.add_argument(
+        "--proxies",
+        type=Path,
+        default=_DIR / "data" / "proxies.txt",
+        help="Файл прокси для details API",
+    )
+    parser.add_argument(
+        "--skip-details",
+        action="store_true",
+        help="Не загружать details (features, images) по offer id",
     )
     parser.add_argument(
         "--limit",
@@ -91,7 +109,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--proxy",
         type=str,
         default=None,
-        help="Прокси URL для запросов (например, http://user:pass@host:port)",
+        help="Прокси URL для geocode/yandex (http://user:pass@host:port)",
     )
     parser.add_argument(
         "-v",
@@ -104,6 +122,8 @@ def build_parser() -> argparse.ArgumentParser:
     merge.add_argument("jsonl", type=Path, nargs="?", default=_DIR / "data" / "result.jsonl")
     merge.add_argument("json", type=Path, nargs="?", default=_DIR / "data" / "result.json")
 
+    add_smoke_test_parser(sub)
+
     return parser
 
 
@@ -113,11 +133,14 @@ def cmd_run(args: argparse.Namespace) -> int:
         offers_per_page=args.offers_per_page,
         moscow_only=not args.all_cities,
         proxy_url=args.proxy,
+        detail_workers=args.detail_workers,
+        proxies_path=args.proxies,
+        skip_details=args.skip_details,
     )
     if not settings.cian_cookies:
         logging.error(
-            "Не заданы cookies Cian. Скопируйте из браузера в cian/cookies.txt "
-            "или переменную CIAN_COOKIES."
+            "Не заданы cookies Cian. Укажите CIAN_COOKIES, cian/cookies.txt "
+            "или проверьте доступность cookie-сервера (CIAN_COOKIE_SERVER_URL)."
         )
         return 1
 
@@ -129,9 +152,8 @@ def cmd_run(args: argparse.Namespace) -> int:
     )
 
     if args.retry_failed:
-        failed_ids = set()
+        failed_ids: set[int] = set()
         if args.failed.is_file():
-            import json
             with args.failed.open(encoding="utf-8") as f:
                 for line in f:
                     if not line.strip():
@@ -143,18 +165,23 @@ def cmd_run(args: argparse.Namespace) -> int:
                         pass
         houses = [h for h in houses if h.house_id in failed_ids]
         logging.info("К повторной обработке (failed): %s домов", len(houses))
-        
+
         if args.failed.is_file():
-            import shutil
             bak_path = args.failed.with_name(args.failed.name + ".bak")
             shutil.copy(args.failed, bak_path)
             args.failed.write_text("", encoding="utf-8")
     else:
         logging.info("К обработке: %s домов", len(houses))
 
+    if not settings.skip_details:
+        logging.info(
+            "Details enrichment: detail_workers=%s proxies=%s",
+            settings.detail_workers,
+            settings.proxies_path,
+        )
+
     writer = ResultWriter(args.output, args.failed)
-    pipeline = HousePipeline(settings)
-    runner = ParserRunner(settings, pipeline, writer)
+    runner = ParserRunner(settings, writer)
     stats = runner.run(houses)
 
     logging.info(
@@ -165,7 +192,7 @@ def cmd_run(args: argparse.Namespace) -> int:
         stats.failed,
         stats.elapsed_sec,
     )
-    return 0 if stats.failed == 0 else 0
+    return 0
 
 
 def cmd_merge(args: argparse.Namespace) -> int:
@@ -197,4 +224,6 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "merge":
         return cmd_merge(args)
+    if args.command == "smoke-test":
+        return args.cmd(args)
     return cmd_run(args)

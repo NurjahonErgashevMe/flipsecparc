@@ -1,0 +1,55 @@
+{
+    "images": [
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2885785737-1.jpg?dh=-1599700549",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881924633-1.jpg?dh=124697788",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881853769-1.jpg?dh=1220603451",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881928759-1.jpg?dh=1914813578",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881928764-1.jpg?dh=467734452",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881928766-1.jpg?dh=225521750",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881928763-1.jpg?dh=1416263478",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881933218-1.jpg?dh=870444116",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881928754-1.jpg?dh=96857740",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881928765-1.jpg?dh=-1134457114",
+        "https://images.cdn-cian.ru/images/kvartira-moskva-trifonovskaya-ulica-2881860738-1.jpg?dh=1263531152"
+    ],
+    "title": "73,4 м² · 3-комн. · 13/15 этаж",
+    "prices": {
+        "price": "35,0 млн ₽",
+        "priceDiff": "noChange",
+        "priceSqm": "476 839 ₽/м²"
+    },
+    "status": "published",
+    "address": "Москва, Трифоновская улица, 11",
+    "link": "/sale/flat/330139464/?mlSearchSessionGuid=84b4773326fbd32c5662ae375a8f2601",
+    "features": [
+        {
+            "title": "Тип дома",
+            "value": "Монолитный"
+        },
+        {
+            "title": "Год постройки",
+            "value": "1981"
+        },
+        {
+            "title": "Жилая площадь",
+            "value": "50 м²"
+        },
+        {
+            "title": "Кухня",
+            "value": "8 м²"
+        },
+        {
+            "title": "Ремонт",
+            "value": "Без ремонта"
+        },
+        {
+            "title": "Балкон",
+            "value": "2 лоджии"
+        },
+        {
+            "title": "Санузел",
+            "value": "1 раздельный"
+        }
+    ],
+    "mlSearchSessionGuid": "84b4773326fbd32c5662ae375a8f2601"
+}

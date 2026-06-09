@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from typing import Any
 
 from ..config import CIAN_ORIGIN_HEADERS, Settings
-from ..models import DeactivatedOffer
+from ..models import DeactivatedOffer, RoomCount
 from ..errors import PipelineError
 from .http import HttpClient, HttpError
 
@@ -12,6 +12,9 @@ GEOCODE_CACHED_URL = "https://api.cian.ru/geo/v1/geocode-cached/"
 GEOCODED_FOR_SEARCH_URL = "https://api.cian.ru/geo/v1/geocoded-for-search/"
 OFFER_HISTORY_URL = (
     "https://api.cian.ru/valuation-offer-history/v4/get-house-offer-history-desktop/"
+)
+OFFER_DETAILS_URL = (
+    "https://api.cian.ru/valuation-offer-history/v2/get-offer-from-history-web/"
 )
 
 
@@ -97,13 +100,14 @@ class CianClient:
         house_id: int,
         *,
         results_on_page: int,
-    ) -> tuple[list[DeactivatedOffer], int]:
+    ) -> tuple[list[DeactivatedOffer], int, list[RoomCount]]:
         if not self._settings.cian_cookies:
             raise PipelineError(
                 "offer_history",
                 "нужны cookies Cian (CIAN_COOKIES или cian/cookies.txt)",
             )
         collected: list[DeactivatedOffer] = []
+        room_counts: list[RoomCount] = []
         total_count = 0
         page = 1
 
@@ -119,6 +123,12 @@ class CianClient:
                 },
             )
             total_count = int(data.get("totalCount") or 0)
+            if page == 1:
+                room_counts = [
+                    RoomCount.from_api(item)
+                    for item in (data.get("roomCounts") or [])
+                    if isinstance(item, dict)
+                ]
             offers_raw = data.get("offers") or []
             if not offers_raw:
                 break
@@ -132,4 +142,26 @@ class CianClient:
                 break
             page += 1
 
-        return collected, total_count
+        return collected, total_count, room_counts
+
+    def fetch_offer_details(
+        self,
+        cian_id: int,
+        *,
+        proxy: str | None = None,
+    ) -> dict[str, Any]:
+        if not self._settings.cian_cookies:
+            raise PipelineError(
+                "offer_details",
+                "нужны cookies Cian (CIAN_COOKIES или cian/cookies.txt)",
+            )
+        data = self._http.request(
+            "GET",
+            OFFER_DETAILS_URL,
+            headers=self._headers(),
+            params={"cianId": cian_id},
+            proxy=proxy,
+        )
+        if not isinstance(data, dict):
+            raise PipelineError("offer_details", "неожиданный формат ответа")
+        return data

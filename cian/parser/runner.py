@@ -24,17 +24,20 @@ class RunStats:
 
 
 class ParserRunner:
-    def __init__(self, settings: Settings, pipeline: HousePipeline, writer: ResultWriter) -> None:
+    def __init__(self, settings: Settings, writer: ResultWriter) -> None:
         self._settings = settings
-        self._pipeline = pipeline
         self._writer = writer
         self._stats_lock = threading.Lock()
         self._success = 0
         self._failed = 0
         self._done = 0
 
-    def _process_one(self, house: InputHouse) -> ParsedHouse | FailedHouse:
-        return self._pipeline.parse_safe(house)
+    def _process_one(
+        self,
+        pipeline: HousePipeline,
+        house: InputHouse,
+    ) -> ParsedHouse | FailedHouse:
+        return pipeline.parse_safe(house)
 
     def _on_result(self, result: ParsedHouse | FailedHouse) -> None:
         if isinstance(result, ParsedHouse):
@@ -69,8 +72,20 @@ class ParserRunner:
             )
 
         started = time.monotonic()
+        detail_executor: ThreadPoolExecutor | None = None
+        if not self._settings.skip_details:
+            detail_executor = ThreadPoolExecutor(
+                max_workers=self._settings.detail_workers,
+            )
+            log.info("Detail workers: %s", self._settings.detail_workers)
+
+        pipeline = HousePipeline(
+            self._settings,
+            detail_executor=detail_executor,
+        )
+
         max_in_flight = self._settings.workers * 2
-        executor = ThreadPoolExecutor(max_workers=self._settings.workers)
+        house_executor = ThreadPoolExecutor(max_workers=self._settings.workers)
         futures: dict[Future, InputHouse] = {}
         house_iter = iter(pending)
 
@@ -79,7 +94,7 @@ class ParserRunner:
                 house = next(house_iter, None)
                 if house is None:
                     break
-                fut = executor.submit(self._process_one, house)
+                fut = house_executor.submit(self._process_one, pipeline, house)
                 futures[fut] = house
 
             while futures:
@@ -98,10 +113,14 @@ class ParserRunner:
 
                     next_house = next(house_iter, None)
                     if next_house is not None:
-                        nf = executor.submit(self._process_one, next_house)
+                        nf = house_executor.submit(
+                            self._process_one, pipeline, next_house,
+                        )
                         futures[nf] = next_house
         finally:
-            executor.shutdown(wait=True)
+            house_executor.shutdown(wait=True)
+            if detail_executor is not None:
+                detail_executor.shutdown(wait=True)
             self._writer.flush_checkpoint()
 
         elapsed = time.monotonic() - started

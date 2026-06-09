@@ -1,22 +1,39 @@
 from __future__ import annotations
 
 import logging
+from concurrent.futures import ThreadPoolExecutor
 
 from .address import build_geocode_cached_request, build_yandex_query
 from .clients import CianClient, HttpClient, HttpError, YandexSuggestClient
 from .config import Settings
 from .errors import PipelineError
 from .models import CianHouseGeo, FailedHouse, InputHouse, ParsedHouse
+from .offer_details import OfferDetailsEnricher
+from .proxy import ProxyManager
 
 log = logging.getLogger(__name__)
 
 
 class HousePipeline:
-    def __init__(self, settings: Settings) -> None:
+    def __init__(
+        self,
+        settings: Settings,
+        *,
+        detail_executor: ThreadPoolExecutor | None = None,
+    ) -> None:
         http = HttpClient(settings)
         self._yandex = YandexSuggestClient(http, settings)
         self._cian = CianClient(http, settings)
         self._settings = settings
+        self._enricher: OfferDetailsEnricher | None = None
+        if not settings.skip_details and detail_executor is not None:
+            proxy_manager = ProxyManager(settings.proxies_path)
+            self._enricher = OfferDetailsEnricher(
+                self._cian,
+                proxy_manager,
+                detail_executor,
+                max_retries=settings.max_retries,
+            )
 
     def parse(self, house: InputHouse) -> ParsedHouse:
         yandex_query = build_yandex_query(house)
@@ -35,7 +52,7 @@ class HousePipeline:
         )
         cian_geo = _build_cian_geo(cian_house_id, cached, geo_payload)
 
-        offers, total = self._cian.fetch_deactivated_offers(
+        offers, total, room_counts = self._cian.fetch_deactivated_offers(
             cian_house_id,
             results_on_page=self._settings.offers_per_page,
         )
@@ -46,6 +63,11 @@ class HousePipeline:
             total,
         )
 
+        if self._enricher is not None and offers:
+            offers = self._enricher.enrich(offers)
+            ok = sum(1 for o in offers if o.details is not None)
+            log.debug("[%s] details enriched: %s/%s", house.house_id, ok, len(offers))
+
         return ParsedHouse(
             source=house.source_snapshot(),
             yandex_formatted_address=yandex_address,
@@ -54,6 +76,7 @@ class HousePipeline:
             cian=cian_geo,
             offers=offers,
             offers_total_count=total,
+            room_counts=room_counts,
         )
 
     def parse_safe(self, house: InputHouse) -> ParsedHouse | FailedHouse:

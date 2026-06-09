@@ -37,16 +37,23 @@ class HttpClient:
         headers: dict[str, str] | None = None,
         params: dict[str, Any] | None = None,
         json_body: dict[str, Any] | None = None,
+        proxy: str | None = None,
     ) -> Any:
         last_error: Exception | None = None
         for attempt in range(1, self._settings.max_retries + 1):
             try:
+                proxies = None
+                if proxy:
+                    proxies = {"http": proxy, "https": proxy}
+                elif self._session.proxies:
+                    proxies = self._session.proxies
                 response = self._session.request(
                     method,
                     url,
                     headers=headers,
                     params=params,
                     json=json_body,
+                    proxies=proxies,
                     timeout=self._settings.request_timeout,
                 )
                 if response.status_code == 429 or response.status_code >= 500:

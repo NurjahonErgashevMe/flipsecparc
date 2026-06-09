@@ -1,10 +1,14 @@
 from __future__ import annotations
 
+import logging
 import os
 from dataclasses import dataclass
 from pathlib import Path
 
+from .cookies import DEFAULT_COOKIE_SERVER_URL, fetch_cookies_header
+
 _DIR = Path(__file__).resolve().parent.parent
+log = logging.getLogger(__name__)
 
 def _load_env_file() -> None:
     env_path = _DIR / ".env"
@@ -53,6 +57,9 @@ class Settings:
     offers_per_page: int
     moscow_only: bool
     proxy_url: str | None = None
+    detail_workers: int = 32
+    proxies_path: Path | None = None
+    skip_details: bool = False
 
     @classmethod
     def from_env(
@@ -65,12 +72,24 @@ class Settings:
         max_retries: int = 4,
         retry_base_delay: float = 0.5,
         proxy_url: str | None = None,
+        detail_workers: int = 32,
+        proxies_path: Path | None = None,
+        skip_details: bool = False,
     ) -> Settings:
         cookies = os.environ.get("CIAN_COOKIES", "").strip()
         if not cookies:
             cookie_path = _DIR / "cookies.txt"
             if cookie_path.is_file():
                 cookies = cookie_path.read_text(encoding="utf-8").strip()
+        if not cookies:
+            cookie_url = os.environ.get(
+                "CIAN_COOKIE_SERVER_URL",
+                DEFAULT_COOKIE_SERVER_URL,
+            ).strip()
+            try:
+                cookies = fetch_cookies_header(cookie_url)
+            except Exception as exc:
+                log.warning("Не удалось загрузить cookies с %s: %s", cookie_url, exc)
 
         return cls(
             yandex_api_key=os.environ.get("YANDEX_SUGGEST_API_KEY", DEFAULT_YANDEX_API_KEY),
@@ -82,4 +101,7 @@ class Settings:
             offers_per_page=offers_per_page,
             moscow_only=moscow_only,
             proxy_url=proxy_url or os.environ.get("CIAN_PROXY"),
+            detail_workers=detail_workers,
+            proxies_path=proxies_path,
+            skip_details=skip_details,
         )

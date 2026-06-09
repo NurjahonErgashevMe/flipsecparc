@@ -1,0 +1,1510 @@
+{
+  "key": "defaultState",
+  "value": {
+    "abGroup": 0,
+    "abUseExperiments": [
+      {
+        "experimentName": "aud_desktop_bx495_expert_opinion_gpt_newb",
+        "groupName": "A"
+      },
+      {
+        "experimentName": "b2c_txn963_replacement_button_under_price_web",
+        "groupName": "A"
+      },
+      {
+        "experimentName": "newbuilding_kpn_chats_cpl_card_desktop",
+        "groupName": "B"
+      },
+      {
+        "experimentName": "newbuilding_booking_authorization_desktop",
+        "groupName": "B"
+      }
+    ],
+    "aside": {
+      "height": 0,
+      "isNavigationActive": false,
+      "activeAnchor": "#photos",
+      "isCompactModeEnabled": false
+    },
+    "hideOffer": {},
+    "bookedOfferId": 0,
+    "captchaSiteKey": "6LfvfCETAAAAABxHQ2wxiTT_mILt0c87axZn7zOU",
+    "captchaSpamSiteKey": "6LdpqSQUAAAAAJXo9mQJY2QYw2rSi2D0-ZXctcw_",
+    "commentsData": {
+      "commentText": "",
+      "editing": false,
+      "isOpen": false,
+      "messageError": "",
+      "statusFetch": "none",
+      "openAfterAuth": false
+    },
+    "favoriteMotivation": {
+      "isActive": true,
+      "isShows": false
+    },
+    "feedback": {
+      "isComplaintPopupOpened": false,
+      "isFeedbackSent": false,
+      "isFeedbackSentPopupOpened": false,
+      "isFormPopupOpened": false,
+      "isPopupOpened": false,
+      "status": "Initial"
+    },
+    "gallery": {},
+    "legend": {
+      "isOpen": false
+    },
+    "mapSimilar": null,
+    "mapTabs": {
+      "activeTab": "similarOffers"
+    },
+    "mortgage": {
+      "rates": {
+        "flat": {
+          "used": 16.9,
+          "new": 5.75
+        },
+        "appartments": {
+          "used": 18.8,
+          "new": 21.2
+        },
+        "suburban": {
+          "new": 6,
+          "used": 19.9
+        }
+      },
+      "bankIds": [
+        "bank-alfa",
+        "bank-domrf",
+        "bank-mkb",
+        "bank-psb",
+        "bank-sovcom",
+        "bank-t",
+        "bank-uralsib",
+        "bank-vtb-new",
+        "bank-absolut"
+      ]
+    },
+    "mortgageGallery": {},
+    "newbuildingBookedFromDeveloper": {
+      "isConfirmOpen": false,
+      "status": "initial"
+    },
+    "offerChat": {
+      "requestStatus": "initial",
+      "isChatsEnabled": false,
+      "isChatOpened": false,
+      "openAfterAuth": false,
+      "isOnline": false,
+      "hintQuestions": []
+    },
+    "consultantCianChat": {
+      "requestStatus": "initial",
+      "chatId": null,
+      "isLoading": false,
+      "isError": false,
+      "isErrorPopupOpened": false,
+      "isEnabled": false,
+      "isOpened": false,
+      "isAutorisationPopupOpened": false
+    },
+    "offerData": {
+      "offer": {
+        "category": "flatSale",
+        "status": "deleted",
+        "dealType": "sale",
+        "offerType": "flat",
+        "geo": {
+          "address": [
+            {
+              "fullName": "Москва",
+              "id": 1,
+              "locationTypeId": 1,
+              "name": "Москва",
+              "shortName": "Москва",
+              "type": "location",
+              "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru\u002F"
+            },
+            {
+              "fullName": "улица Усачева",
+              "id": 2311,
+              "locationTypeId": -1,
+              "name": "Усачева",
+              "shortName": "ул. Усачева",
+              "type": "street",
+              "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru-moskva-ulica-usacheva-022311\u002F"
+            },
+            {
+              "fullName": "40",
+              "id": 81310,
+              "locationTypeId": -1,
+              "name": "40",
+              "shortName": "40",
+              "type": "house",
+              "url": "https:\u002F\u002Fwww.cian.ru\u002Fcat.php?deal_type=sale&engine_version=2&house%5B0%5D=81310&offer_type=flat&room2=1"
+            }
+          ],
+          "coordinates": {
+            "lat": 55.726669,
+            "lng": 37.565883
+          },
+          "highways": [],
+          "railways": [
+            {
+              "id": 693,
+              "directionIds": [14],
+              "distance": "2.0",
+              "time": 31,
+              "name": "Москва (Киевский вокзал)",
+              "travelType": "byFoot"
+            },
+            {
+              "id": 693,
+              "directionIds": [14],
+              "distance": "4.0",
+              "time": 6,
+              "name": "Москва (Киевский вокзал)",
+              "travelType": "byCar"
+            },
+            {
+              "id": 706,
+              "directionIds": [14],
+              "distance": "5.0",
+              "time": 7,
+              "name": "Москва-Сортировочная",
+              "travelType": "byCar"
+            },
+            {
+              "id": 690,
+              "directionIds": [17],
+              "distance": "5.0",
+              "time": 68,
+              "name": "Москва (Павелецкий вокзал)",
+              "travelType": "byFoot"
+            },
+            {
+              "id": 706,
+              "directionIds": [14],
+              "distance": "6.0",
+              "time": 83,
+              "name": "Москва-Сортировочная",
+              "travelType": "byFoot"
+            },
+            {
+              "id": 690,
+              "directionIds": [17],
+              "distance": "6.0",
+              "time": 12,
+              "name": "Москва (Павелецкий вокзал)",
+              "travelType": "byCar"
+            }
+          ],
+          "undergrounds": [
+            {
+              "id": 118,
+              "name": "Спортивная",
+              "lineColor": "CF0000",
+              "travelType": "walk",
+              "travelTime": 7,
+              "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru-moskva-metro-sportivnaya-118\u002F",
+              "underConstruction": false
+            },
+            {
+              "id": 310,
+              "name": "Лужники",
+              "lineColor": "FA6F9E",
+              "travelType": "walk",
+              "travelTime": 12,
+              "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru-moskva-stanciya-mck-luzhniki-310\u002F",
+              "underConstruction": false,
+              "lineType": "mck"
+            },
+            {
+              "id": 143,
+              "name": "Фрунзенская",
+              "lineColor": "CF0000",
+              "travelType": "walk",
+              "travelTime": 17,
+              "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru-moskva-metro-frunzenskaya-143\u002F",
+              "underConstruction": false
+            }
+          ]
+        },
+        "id": 310104717,
+        "objectGuid": "45990faa-3414-484b-8d2f-7daa9afea601",
+        "cianId": 310104717,
+        "userId": 70995601,
+        "publishedUserId": 70995601,
+        "cianUserId": 70995601,
+        "description": "Объявление снято с публикации, поищите ещё что-нибудь",
+        "photos": null,
+        "phones": [],
+        "publishTerms": {
+          "terms": [
+            {
+              "services": ["paid"],
+              "days": 30,
+              "type": "periodical",
+              "tariffIdentificator": {
+                "tariffId": 616441,
+                "tariffGridType": "packageTariff"
+              }
+            }
+          ],
+          "autoprolong": true
+        },
+        "flatType": "rooms",
+        "totalArea": "44.9",
+        "land": {},
+        "flags": {
+          "isArchived": false,
+          "isCommercialOwnershipVerified": false
+        },
+        "house": {},
+        "specialty": {
+          "types": [],
+          "additionalTypes": []
+        },
+        "isNeedHideExactAddress": false,
+        "electricity": {},
+        "gas": {},
+        "water": {},
+        "drainage": {},
+        "garage": {},
+        "areaParts": [],
+        "roomsCount": 2,
+        "floorNumber": 1,
+        "bargainTerms": {
+          "price": 21713087,
+          "priceType": "all",
+          "currency": "rur",
+          "saleType": "free",
+          "includedOptions": [],
+          "prices": {
+            "rur": 21713087,
+            "usd": 295542,
+            "eur": 253782
+          },
+          "tags": []
+        },
+        "building": {
+          "floorsCount": 14,
+          "parking": {},
+          "totalArea": 44.9,
+          "infrastructure": {},
+          "openingHours": {},
+          "liftTypes": [],
+          "cranageTypes": [],
+          "deadline": {}
+        },
+        "editDate": "2025-01-14T02:00:16.947000Z",
+        "humanizedEditDate": "14 янв, 02:00",
+        "isInHiddenBase": false,
+        "videos": [],
+        "priceTotal": 21713087,
+        "priceTotalRur": 21713087,
+        "exportLinks": {
+          "pdfUrl": "\u002Fexport\u002Fpdf\u002Fsale\u002Fflat\u002F310104717\u002F",
+          "docxUrl": "\u002Fexport\u002Fdocx\u002Fsale\u002Fflat\u002F310104717\u002F"
+        },
+        "valueAddedServices": {
+          "isStandard": false,
+          "isTop3": false,
+          "isPremium": false
+        },
+        "promotion": {
+          "isPerformanceVasPilot": false,
+          "promotionDescription": "",
+          "isCpcAuction": false
+        },
+        "categoriesIds": [],
+        "creationDate": "2024-11-19T01:05:42.983",
+        "recoveryLink": "\u002Frazmestit-obyavlenie\u002F310104717\u002F",
+        "trackingData": {
+          "moId": 0,
+          "oblId": 1,
+          "cityId": 1,
+          "fbRegion": "Москва",
+          "fbCity": "Москва"
+        },
+        "editPhoto": "\u002Frealty\u002Fadd2.aspx?id=310104717",
+        "newEdit": "\u002Frazmestit-obyavlenie\u002F?realty_id=310104717",
+        "certificate": "https:\u002F\u002Fwww.cian.ru\u002Fnewobjects\u002Fcian\u002Fcertification\u002Fget?announcementId=310104717",
+        "edit": "\u002Frealty\u002Fadd1.aspx?id=310104717",
+        "similarOffersLink": "",
+        "similarOffersCount": 0,
+        "isImported": false,
+        "userConfirmedFix": false,
+        "isEnabledCallTracking": true,
+        "callTrackingProvider": "mts",
+        "booking": {},
+        "isRentByParts": false,
+        "isDuplicate": false,
+        "showWarningMessage": false,
+        "isUnique": false,
+        "isUniqueCheckDate": "2026-06-08",
+        "isCianPartner": false,
+        "isIllegalConstruction": false,
+        "tradingLink": "https:\u002F\u002Fбанкрот.вэтп.рф\u002Foaof\u002F9132\u002Flots\u002F30698",
+        "externalOfferUrl": "",
+        "cianLayouts": null,
+        "newbuilding": {
+          "id": 0,
+          "isFromBuilder": false,
+          "isFromDeveloper": false,
+          "isFromLeadFactory": false,
+          "isFromSeller": false,
+          "isReliable": false,
+          "isTariffPremium": false,
+          "isPremium": false,
+          "name": "",
+          "newbuildingFeatures": null,
+          "showJkReliableFlag": false
+        },
+        "demolishedInMoscowProgramm": false
+      },
+      "seoLinks": [],
+      "breadcrumbs": [
+        {
+          "url": "https:\u002F\u002Fwww.cian.ru\u002F",
+          "title": "Недвижимость в Москве"
+        },
+        {
+          "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit\u002F",
+          "title": "Продажа"
+        },
+        {
+          "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru\u002F",
+          "title": "Продажа 2-комнатных квартир в Москве"
+        },
+        {
+          "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru-moskva-metro-sportivnaya-118\u002F",
+          "title": "метро Спортивная"
+        },
+        {
+          "url": "https:\u002F\u002Fwww.cian.ru\u002Fkupit-2-komnatnuyu-kvartiru-moskva-ulica-usacheva-022311\u002F",
+          "title": "улица Усачева"
+        }
+      ],
+      "pageHelmetData": {
+        "title": "",
+        "meta": []
+      },
+      "similarOffersMapQs": "engine_version=2&deal_type=sale&offer_type=flat&region=1&minprice=18456123&maxprice=24970050&room2=1&room3=1&skipids%5B0%5D=310104717",
+      "similarNewObjects": [
+        {
+          "id": 301425718,
+          "photoUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002F2895362459-4.jpg",
+          "roomTitle": "2-комн. кв",
+          "addressStr": "Москва, Электролитный проезд, 6",
+          "floor": 34,
+          "floorn": 27,
+          "kitchenArea": 0,
+          "livingArea": 23.8,
+          "priceRur": 22114848,
+          "publishedUserId": 39404589,
+          "totalArea": 39.6,
+          "undergroundInfo": {
+            "lineColor": "A2A5B5",
+            "name": "Нагорная",
+            "type": "mow"
+          }
+        },
+        {
+          "id": 330598626,
+          "photoUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002F2890918208-4.jpg",
+          "roomTitle": "2-комн. кв",
+          "addressStr": "Москва, Левел Звенигородская жилой комплекс, к2",
+          "floor": 64,
+          "floorn": 3,
+          "kitchenArea": 17.1,
+          "livingArea": 11.4,
+          "priceRur": 19349558,
+          "publishedUserId": 98302806,
+          "totalArea": 36.8,
+          "undergroundInfo": {
+            "lineColor": "27303F",
+            "name": "Звенигородская",
+            "type": "mow"
+          }
+        },
+        {
+          "id": 315113344,
+          "photoUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002F2837471846-4.jpg",
+          "roomTitle": "2-комн. кв",
+          "addressStr": "Москва, 2-й Силикатный проезд, вл8",
+          "floor": 28,
+          "floorn": 6,
+          "kitchenArea": 4.6,
+          "livingArea": 37.5,
+          "priceRur": 19791420,
+          "publishedUserId": 102163700,
+          "totalArea": 47.1,
+          "undergroundInfo": {
+            "lineColor": "7ACDCE",
+            "name": "Хорошёвская",
+            "type": "mow"
+          }
+        }
+      ],
+      "linkToMap": "https:\u002F\u002Fwww.cian.ru\u002Fmap\u002F?engine_version=2&deal_type=sale&offer_type=flat&region=1&minprice=18456123&maxprice=24970050&room2=1&room3=1&zoom=16&center=55.726669%2C37.565883",
+      "isFavorite": false,
+      "offerFoldersCount": 0,
+      "subscription": {
+        "isSubscribed": false
+      },
+      "priceChanges": [
+        {
+          "changeTime": "2024-11-18T22:05:43.752904Z",
+          "priceData": {
+            "currency": "rur",
+            "price": 21713087
+          }
+        }
+      ],
+      "offences": [],
+      "bti": {
+        "houseData": {
+          "yearRelease": 1973,
+          "houseMaterialType": "block",
+          "floorMax": 14,
+          "entrances": 1,
+          "flatCount": 98,
+          "isEmergency": false,
+          "demolishedInMoscowProgramm": false,
+          "houseHeatSupplyType": "central",
+          "houseOverhaulFundType": "regionalOp",
+          "houseGasSupplyType": "without",
+          "houseOverlapType": "concrete",
+          "lifts": 2,
+          "seriesName": "Индивидуальный проект"
+        }
+      },
+      "stats": {
+        "totalViewsFormattedString": "197 просмотров, 1 за сегодня"
+      },
+      "notes": {},
+      "agent": {
+        "id": 70995601,
+        "cianUserId": 70995601,
+        "realtyUserId": 70995601,
+        "accountType": "agency",
+        "companyName": "Аукционный Дом ТОРГИ-РУ",
+        "creationDate": "2021-03-30T15:03:51.390000Z",
+        "name": "Аукционный Дом ТОРГИ-РУ",
+        "isPro": true,
+        "description": "За плечами команды компании Торги-ру - Все аукционы России, стоит более чем 16 летний опыт работы на рынке коммерческой недвижимости, с 2017 года участие в торгах по банкротству, арестованному, муниципальному и залоговому имуществу, в  рамках ФЗ -127 «О несостоятельности (банкротстве), ФЗ № 229-«Об исполнительном производстве», ФЗ № 102-ФЗ «Об ипотеке (залоге недвижимости)». За это время был приобретен бесценный опыт в реализации таких объектов как: сети АЗС, бизнес центры, торговые площади, стрит-ритейл, пром.объекты и многое другое.\n\nНаши преимущества: проводим юридический и технический анализ; подготавливаем пакет документов для участия в торгах; обеспечиваем 100% допуск к участию в торгах; контролируем ход торгов на всём их протяжении; снимаем обременения, запреты регистрационных действий, запреты ФССП, судебных решения и прочее; подготавливаем пакет документов для дальнейшей регистрации в Росреестре.\n\nНашему клиенту мы предлагаем самый полный и комплексный спектр услуг на протяжении всего жизненного цикла объекта недвижимости:\n-  Мы готовы полностью освободить вас от всех забот, связанных с инвестициями в недвижимость на территории РФ, подготовим пакет документов и примем участие в торгах (банкротство, Росимущество, ФССП и др.), найдём арендатора, возьмем на себя управление объектом и при необходимости продадим ваш объект уже по, как минимум, рыночной стоимости. \nОсновываясь на опыте, перед покупкой, проведем финансовый анализ рентабельности объекта, технических показателей и характеристики с целью выявления достоинств и недостатков объекта. Оценим его потенциал. При отрицательной оценке предоставим мотивированный отказ от покупки.\nЗвоните прямо сейчас! Приглашаем к сотрудничеству агентства недвижимости и риэлторов! Особые условия для инвесторов",
+        "phones": [
+          {
+            "confirmed": true
+          }
+        ],
+        "skills": [
+          {
+            "id": 711,
+            "name": "жилая",
+            "parentName": "Продажа недвижимости"
+          },
+          {
+            "id": 713,
+            "name": "загородная",
+            "parentName": "Продажа недвижимости"
+          },
+          {
+            "id": 717,
+            "name": "коммерческая",
+            "parentName": "Продажа недвижимости"
+          },
+          {
+            "id": 745,
+            "name": "консультации",
+            "parentName": "Другие услуги"
+          }
+        ],
+        "absoluteAvatarUrl": "https:\u002F\u002Fwww.cian.ru\u002Fapi\u002Fget-avatar\u002F?i=39513698&t=2&p=2&timestamp=1714358107",
+        "absoluteMiniAvatarUrl": "https:\u002F\u002Fwww.cian.ru\u002Fapi\u002Fget-avatar\u002F?i=39513698&t=2&p=1&timestamp=1714358107",
+        "isDeveloper": false,
+        "experience": "с 2017 года",
+        "isRecidivist": false,
+        "isUserOffersHasErrors": false,
+        "offersCount": 0,
+        "offersLink": "https:\u002F\u002Fwww.cian.ru\u002Fcompany\u002F70995601\u002F",
+        "availableServices": {
+          "isUploadsAvailable": true,
+          "isCallTrackingAvailable": false,
+          "isPhoneChangingAvailable": false,
+          "isServicePackagesAvailable": true,
+          "canUseHiddenBase": true
+        },
+        "userType": "realtor_based",
+        "removeCompetitor": false,
+        "status": "published",
+        "isSubAgent": false,
+        "isMessagingEnabled": false,
+        "isPassportVerified": false,
+        "isSelfEmployed": false,
+        "isPrivateBroker": false,
+        "isCianPartner": false,
+        "canShowOnline": false,
+        "moderationInfo": {
+          "qualityLevelInfo": {
+            "levelSystemName": "max",
+            "levelName": "Суперагент",
+            "levelOrder": 4,
+            "hasVerifiedDocuments": true,
+            "highResponsibility": true,
+            "isSuperAgent": true,
+            "isSuperHost": false,
+            "isBlocked": false,
+            "showSuperHost": false,
+            "showSuperAgent": true,
+            "showHighResponsibility": true
+          },
+          "isUserIdentified": true,
+          "isUserIdentifiedByDocuments": true,
+          "showUserIdentifiedByDocuments": false
+        },
+        "isHidden": false,
+        "metrics": [
+          {
+            "title": "На Циан",
+            "value": "5 лет"
+          }
+        ],
+        "agentLists": ["tradeRealty"]
+      },
+      "user": {
+        "realtyUserId": 139763160,
+        "cianUserId": 139763160,
+        "isAuthenticated": true,
+        "permissions": {
+          "canModerateUsers": false,
+          "canModerateAnnouncements": false,
+          "canModerateAnnouncementsExpert": false,
+          "canViewUsers": false,
+          "canViewAnnouncements": false,
+          "canViewHiddenAnnouncements": false,
+          "canHandleAnnouncements": false
+        },
+        "canUseHiddenBase": false,
+        "isProfi": false,
+        "email": "nurjahonergashevme@gmail.com",
+        "ga": {
+          "type": "realtor_not_commerce",
+          "balance": 0,
+          "packages": ["noCommerce"],
+          "emailMd5": "eb804db0343a730d653fd9127a876d9f"
+        },
+        "isAgent": false,
+        "firstName": "Nurjahon",
+        "lastName": "",
+        "cianName": "ID:139763160",
+        "canShowOnline": false
+      },
+      "agentAvailability": {
+        "userId": 70995601,
+        "available": true
+      },
+      "isHiddenByUser": false,
+      "degradationInfo": {},
+      "newbuildingsNearby": {
+        "title": "Новостройки поблизости",
+        "text": "Новые жилые комплексы с выгодными ставками по ипотеке",
+        "newbuildings": [
+          {
+            "imageUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002Fdom-xxii-moskva-jk-2239311539-7.jpg",
+            "url": "https:\u002F\u002Fzhk-dom-xxii-i.cian.ru\u002F",
+            "name": "ЖК «ДОМ XXII»",
+            "minPrice": "от 284 900 000 ₽",
+            "underground": {
+              "name": "Спортивная",
+              "lineColor": "CF0000"
+            },
+            "analytics": {
+              "id": 4463213,
+              "position": 1,
+              "type": "JK"
+            }
+          },
+          {
+            "imageUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002Fsavvinskaya-27-moskva-jk-2846655822-7.jpg",
+            "url": "https:\u002F\u002Fzhk-savvinskaya-27-ot-level-i.cian.ru\u002F",
+            "name": "ЖК «Саввинская 27»",
+            "minPrice": "от 249 448 125 ₽",
+            "underground": {
+              "name": "Спортивная",
+              "lineColor": "CF0000"
+            },
+            "analytics": {
+              "id": 3949610,
+              "position": 2,
+              "type": "JK"
+            }
+          },
+          {
+            "imageUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002F80\u002F702\u002F141\u002Fsavvinskaya-17-ot-level-moskva-jk-1412070833-7.jpg",
+            "url": "https:\u002F\u002Fzhk-savvinskaya-17-ot-level-i.cian.ru\u002F",
+            "name": "ЖК «Саввинская 17»",
+            "minPrice": "от 158 000 000 ₽",
+            "underground": {
+              "name": "Спортивная",
+              "lineColor": "CF0000"
+            },
+            "analytics": {
+              "id": 4020606,
+              "position": 3,
+              "type": "JK"
+            }
+          },
+          {
+            "imageUrl": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimages\u002Fklubnyy-kvartal-frunzenskaya-naberezhnaya-moskva-jk-2542738073-7.jpg",
+            "url": "https:\u002F\u002Fzhk-frunzenskaya-naberezhnaya-i.cian.ru\u002F",
+            "name": "ЖК «Клубный квартал «Фрунзенский»»",
+            "minPrice": "от 161 060 000 ₽",
+            "underground": {
+              "name": "Фрунзенская",
+              "lineColor": "CF0000"
+            },
+            "analytics": {
+              "id": 4708642,
+              "position": 4,
+              "type": "JK"
+            }
+          }
+        ],
+        "buttonLink": "https:\u002F\u002Fwww.cian.ru\u002Fmap\u002F?engine_version=2&deal_type=sale&offer_type=flat&object_type%5B0%5D=2&zoom=12&center=55.726669%2C37.565883",
+        "buttonText": "Смотреть все предложения"
+      },
+      "priceInfo": {
+        "pricePerSquareValue": 483587
+      },
+      "rosreestrInfoV2": {
+        "showCheckedLabel": false
+      },
+      "factoids": [
+        {
+          "title": "Общая площадь",
+          "icon": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimgmobile\u002Ficons\u002Foffer_card\u002Fsize.svg",
+          "value": "44,9 м²"
+        },
+        {
+          "title": "Этаж",
+          "icon": "https:\u002F\u002Fimages.cdn-cian.ru\u002Fimgmobile\u002Ficons\u002Foffer_card\u002Ffloor.svg",
+          "value": "1 из 14"
+        }
+      ],
+      "sidebar": [
+        {
+          "title": "Цена за метр",
+          "value": "483 588 ₽\u002Fм²"
+        },
+        {
+          "title": "Условия сделки",
+          "value": "свободная продажа"
+        }
+      ],
+      "features": [
+        {
+          "title": "О квартире",
+          "id": "aboutFlat",
+          "features": [
+            {
+              "value": "Вторичка",
+              "label": "Тип жилья"
+            },
+            {
+              "value": "44,9 м²",
+              "label": "Общая площадь"
+            }
+          ]
+        },
+        {
+          "title": "О доме",
+          "id": "aboutBuilding",
+          "features": [
+            {
+              "value": "1973",
+              "label": "Год постройки"
+            },
+            {
+              "value": "Индивидуальный проект",
+              "label": "Строительная серия"
+            },
+            {
+              "value": "Блочный",
+              "label": "Тип дома"
+            },
+            {
+              "value": "Железобетонные",
+              "label": "Тип перекрытий"
+            },
+            {
+              "value": "1",
+              "label": "Подъезды"
+            },
+            {
+              "value": "Центральное",
+              "label": "Отопление"
+            },
+            {
+              "value": "Нет",
+              "label": "Аварийность"
+            }
+          ]
+        }
+      ],
+      "seoData": {
+        "socialNetworksTitle": {
+          "full": "Продаётся, 2-комнатная квартира, за 21 713 087 ₽, 44.9 м², этаж 1\u002F14",
+          "short": "Продаётся, 2-комн. кв., за 21 713 087 ₽"
+        },
+        "mainTitle": "Купить двухкомнатную квартиру 44.9м² ул. Усачева, 40, Москва м. Спортивная - база ЦИАН, объявление 310104717",
+        "description": "➜ Купите двухкомнатную квартиру площадью 44.9м² ул. Усачева, 40, Москва м. Спортивная. Цена продажи - 21 713 087 руб. Недвижимость на ЦИАН - объявление 310104717",
+        "micromarking": {
+          "@context": "https:\u002F\u002Fschema.org\u002F",
+          "@type": "Product",
+          "name": "",
+          "image": [],
+          "description": "Объявление снято с публикации, поищите ещё чтонибудь",
+          "sku": 310104717,
+          "brand": {
+            "@type": "Brand",
+            "name": "Циан"
+          },
+          "review": {
+            "@type": "Review",
+            "reviewRating": {
+              "@type": "Rating",
+              "ratingValue": 4.8,
+              "bestRating": 5
+            },
+            "author": {
+              "@type": "Person",
+              "name": "Аукционный Дом ТОРГИ-РУ"
+            }
+          },
+          "offers": {
+            "@type": "Offer",
+            "url": "https:\u002F\u002Fwww.cian.ru\u002Fsale\u002Fflat\u002F310104717\u002F",
+            "priceCurrency": "RUB",
+            "availability": "https:\u002F\u002Fschema.org\u002FInStock",
+            "price": 21713087
+          }
+        }
+      },
+      "trackingUrl": "\u002Fsale\u002Fflat\u002FJK\u002Fobl_id=1\u002Fcity_id=1\u002Fobject_type=1\u002Fga_obj_type=2\u002Fspec=company\u002F310104717\u002Ffrom_developer=0\u002Frepres=0\u002Fowner=0\u002Fpod_snos=0\u002Fnv=0\u002F",
+      "amenities": [],
+      "newbuildingRating": 0,
+      "offerPrice": "21 713 087 ₽",
+      "newbuildingFlatSaleQueryString": "\u002Fcat.php?deal_type=sale&engine_version=2&object_type%5B0%5D=2&offer_type=flat&region=1&from_developer=1&maxprice=26713087&decorations_list%5B0%5D=fine&decorations_list%5B1%5D=fineWithFurniture&decorations_list%5B2%5D=preFine",
+      "company": null
+    },
+    "promotionsVillageData": {},
+    "offerStatsPopup": {
+      "dataStats": null,
+      "isOpen": false,
+      "messageError": "",
+      "statusFetch": 0
+    },
+    "pageData": {
+      "dealType": "sale",
+      "offerId": 310104717,
+      "offerType": "flat",
+      "subdomain": "www"
+    },
+    "phoneCollapse": false,
+    "phoneWarning": {
+      "isOpen": false,
+      "target": null
+    },
+    "printModal": {
+      "isCommentsVisible": true,
+      "isOpen": false,
+      "isPhonesVisible": true,
+      "isPrintModeEnabled": false
+    },
+    "pushSubscribed": false,
+    "reclaimModal": {
+      "errorMessage": "",
+      "isOpen": false,
+      "statusFetch": "none"
+    },
+    "remove": {
+      "activeFrame": "initial",
+      "isOpen": false,
+      "status": "default"
+    },
+    "seoLinks": {
+      "isLoad": false,
+      "seoLinks": {
+        "seoBlocks": []
+      }
+    },
+    "serviceBaseUrl": "https:\u002F\u002Fservice.cian.ru\u002F",
+    "similarOffers": {
+      "userBased": {
+        "list": [],
+        "withoutCompetitors": false,
+        "modelVersion": ""
+      },
+      "itemBased": {
+        "list": [],
+        "withoutCompetitors": false,
+        "modelVersion": ""
+      },
+      "historyBased": {
+        "list": [],
+        "withoutCompetitors": false,
+        "modelVersion": ""
+      },
+      "newItemBased": {
+        "list": [],
+        "withoutCompetitors": false,
+        "modelVersion": ""
+      },
+      "newobjectItemBased": {
+        "list": [],
+        "withoutCompetitors": false,
+        "modelVersion": ""
+      }
+    },
+    "specialPromoInfo": null,
+    "subscriptionPriceChangesPopup": {
+      "error": "",
+      "isEmailConfirmed": false,
+      "isOpen": false,
+      "statusFetch": "none"
+    },
+    "tracking": {
+      "user": {
+        "abGroup": 0,
+        "cianUserId": 139763160,
+        "email": "nurjahonergashevme@gmail.com",
+        "type": "realtor_not_commerce",
+        "userId": 139763160
+      },
+      "page": {
+        "customPageURL": "\u002Fsale\u002Fflat\u002Fmo_id=0\u002Fobl_id=1\u002Fcity_id=1\u002Fobject_type=1\u002Fga_obj_type=2\u002Fspec=company\u002F310104717\u002Ffrom_developer=0\u002Frepres=0\u002Fowner=0\u002Fpod_snos=0\u002Fnv=0\u002F",
+        "dealType": "sale",
+        "objectType": "flat_old",
+        "offerID": 310104717,
+        "offerPhone": "",
+        "pageType": "Card",
+        "region": "0-1-1",
+        "siteType": "desktop",
+        "breadCrumbs": [
+          "Недвижимость в Москве",
+          "Продажа",
+          "Продажа 2-комнатных квартир в Москве",
+          "метро Спортивная",
+          "улица Усачева"
+        ],
+        "extra": {
+          "cplDynamicCalltracking": 0,
+          "cplCalltracking": 0,
+          "additional_price": 483587,
+          "category": "flatSale",
+          "adfox": {
+            "status": 0
+          }
+        }
+      }
+    },
+    "viewedSimilar": {
+      "ids": []
+    },
+    "ebcInfo": {
+      "user": {
+        "abGroup": 0,
+        "isAuthorized": true,
+        "userId": 139763160
+      },
+      "page": {
+        "breadCrumbs": [
+          "Недвижимость в Москве",
+          "Продажа",
+          "Продажа 2-комнатных квартир в Москве",
+          "метро Спортивная",
+          "улица Усачева"
+        ],
+        "offerID": 310104717
+      }
+    },
+    "mlSearchRegions": [],
+    "isMlSearchForAllEnabled": true,
+    "isBrandingAvailable": true,
+    "isCountrysideOffersBuilderBadgeEnabled": true,
+    "isHomeowner": false,
+    "soprApi": "https:\u002F\u002Fsopr-api.cian.ru\u002F",
+    "widgetsMarkup": {},
+    "infrastructureMap": {
+      "isLoaded": false
+    },
+    "infrastructureCategories": [],
+    "isCountrysidePromoEnabled": true,
+    "knAuctionCompanies": [],
+    "auctionBanks": [],
+    "dealRent": {
+      "isOpen": false,
+      "isLoading": false,
+      "error": null,
+      "isSuccessModal": false,
+      "isSendSimilarModal": false,
+      "isSimilarSuccessModal": false,
+      "isFailureModal": false,
+      "isPrefetching": false,
+      "phoneConfirmed": false,
+      "isSendSMSLoading": false,
+      "secondsToRetry": 60,
+      "isEntryToShowOpen": false,
+      "isEntryToShowSuccessModal": false,
+      "initialFormState": {
+        "personsCount": 1,
+        "personsInfo": "",
+        "childrenCount": 0,
+        "childrenInfo": [],
+        "petsCount": 0,
+        "petsInfo": "",
+        "comment": "",
+        "activityScope": "",
+        "name": "",
+        "isAgent": false,
+        "phone": "",
+        "smsCode": ""
+      }
+    },
+    "renterForm": {
+      "isOpen": false,
+      "isLoading": false,
+      "error": null,
+      "isSuccessModal": false,
+      "isFailureModal": false,
+      "isPrefetching": false,
+      "phoneConfirmed": false,
+      "isSendSMSLoading": false,
+      "secondsToRetry": 60,
+      "currentStep": "onboarding",
+      "initialFormState": {
+        "personsCount": 1,
+        "personsInfo": "",
+        "childrenCount": 0,
+        "childrenInfo": [],
+        "petsCount": 0,
+        "petsInfo": "",
+        "comment": "",
+        "activityScope": "",
+        "name": "",
+        "isAgent": false,
+        "phone": "",
+        "smsCode": ""
+      }
+    },
+    "complaintPopupOpen": false,
+    "notAvailablePopupOpen": false,
+    "featureToggle": {
+      "utilitiesTermsSettings": {
+        "isUtilitiesTermsEnabled": true,
+        "useIncludeUtilitiesTermsRegions": true,
+        "excludeUtilitiesTermsRegions": [4959, 4606, 4588, 2],
+        "includeUtilitiesTermsRegions": [1, 4593]
+      },
+      "isFavoritesFolderEnabled": true,
+      "isCommercialNewVatTextEnabled": true,
+      "isMortgageBrokerBannerEnabled": false,
+      "isBestPlaceCheckoutEnabled": true,
+      "isChatOnboardingEnabled": true,
+      "isMortgageCalculatorInObjectCardEnabled": true,
+      "isMortgageCalculatorInSecondaryObjectCardEnabled": true,
+      "isMortgageCalculatorInSuburbanCardEnabled": true,
+      "isPurchaseTermsEnabled": true,
+      "earlyAccessContactsFlowEnabled": true,
+      "isNewbuildingBrokerFlatBannerEnabled": true
+    },
+    "dealRentVasCost": 0,
+    "isHomeownerDocsRequired": false,
+    "offersHistory": {
+      "data": {
+        "listing": {
+          "isFetching": false,
+          "isError": false,
+          "data": null,
+          "isLoadMore": false
+        },
+        "listingSpoiler": {
+          "isFetching": false,
+          "isError": false,
+          "data": null,
+          "isLoadMore": false
+        },
+        "offers": {
+          "isFetching": false,
+          "isError": false,
+          "isAuthError": false,
+          "isLoadMore": false,
+          "data": {}
+        }
+      },
+      "roomsFilterActiveValue": "all",
+      "statusFilterActiveValue": "all",
+      "page": 1,
+      "resultsOnPage": 10,
+      "activeOfferId": null,
+      "isFiltersChanged": false,
+      "viewedOffers": [],
+      "defaultFilters": {},
+      "haveAdminAccess": false
+    },
+    "offerValuation": {
+      "data": null,
+      "isFetching": false,
+      "isError": false,
+      "estimationPeriod": null
+    },
+    "showAnalyticsButton": false,
+    "entryToShowEnabled": false,
+    "newStatsEnabled": false,
+    "favoritesAssignWidget": {
+      "folders": [],
+      "selected": {},
+      "initialSelectedFolderIds": [],
+      "savedOfferId": [],
+      "savedInFolders": null,
+      "userHasFolders": false,
+      "showFoldersList": false,
+      "showModalCreateFolder": false,
+      "showOnBoardingDelete": false,
+      "showNotification": false,
+      "isListLoading": false,
+      "canLoadMore": false
+    },
+    "banksList": {
+      "list": [
+        {
+          "id": "bank-sberbank",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fsber.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fsber.svg",
+          "name": "Сбербанк",
+          "integration": "none"
+        },
+        {
+          "id": "bank-vtb-new",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fvtb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fvtb.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FVTB_color.svg",
+          "name": "ВТБ",
+          "legalName": "Банк ВТБ (ПАО)",
+          "integration": "none",
+          "inn": "7702070139"
+        },
+        {
+          "id": "bank-psb",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fpsb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fpsb.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FPSB_color.svg",
+          "name": "ПСБ",
+          "legalName": "ПAO «Промсвязьбанк»",
+          "integration": "light",
+          "inn": "7744000912"
+        },
+        {
+          "id": "bank-gpb",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fgpb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fgazprom-bank.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FGAZPROM_color.svg",
+          "name": "Газпромбанк",
+          "legalName": "Банк ГПБ (АО)",
+          "integration": "light",
+          "env": ["dev", "ote"],
+          "inn": "7744001497"
+        },
+        {
+          "id": "bank-sovcom",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fsovcom.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fsovkom-bank.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FSOVKOMBANK_color.svg",
+          "name": "Совкомбанк",
+          "legalName": "ПАО «Совкомбанк»",
+          "integration": "api",
+          "inn": "4401116480"
+        },
+        {
+          "id": "bank-raif",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fraif.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fraiffeisen-bank.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FRAIFF_color.svg",
+          "name": "Райффайзенбанк",
+          "legalName": "АО «Райффайзенбанк»",
+          "integration": "none",
+          "inn": "7744000302"
+        },
+        {
+          "id": "bank-rshb",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Frshb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Frshb.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FROSSELHOZ_color.svg",
+          "name": "Россельхозбанк",
+          "legalName": "АО «Россельхозбанк»",
+          "integration": "none",
+          "inn": "7725114488"
+        },
+        {
+          "id": "bank-alfa",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Falfa.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Falfa.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FALFA_color.svg",
+          "name": "Альфа-Банк",
+          "legalName": "АО «Альфа-Банк»",
+          "integration": "light",
+          "inn": "7728168971"
+        },
+        {
+          "id": "bank-bgf",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fbgf.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fbgf.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FBGF_color.svg",
+          "name": "БЖФ",
+          "notPayroll": true,
+          "legalName": "АО «Банк БЖФ»",
+          "integration": "api",
+          "env": ["ote"],
+          "inn": "7709056550"
+        },
+        {
+          "id": "bank-ubrir",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fubrir.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fubrir.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FUBRIR_color.svg",
+          "name": "УБРиР",
+          "legalName": "ПАО КБ «УБРИР»",
+          "integration": "light",
+          "inn": "6608008004"
+        },
+        {
+          "id": "bank-open",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fopen.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fopen.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FOPEN_color.svg",
+          "name": "Открытие",
+          "legalName": "ПАО Банк «ФК Открытие»",
+          "integration": "none",
+          "requireSpouseInfo": true,
+          "inn": "7706092528"
+        },
+        {
+          "id": "bank-uralsib",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Furalsib.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Furalsib.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FURALSIB_color.svg",
+          "name": "Уралсиб",
+          "legalName": "ПАО «Банк Уралсиб»",
+          "integration": "light",
+          "inn": "0274062111"
+        },
+        {
+          "id": "bank-domrf",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fdomrf.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fdomrf.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FDOMRF_color.svg",
+          "name": "Банк ДОМ.РФ",
+          "legalName": "АО «Банк ДОМ.РФ",
+          "integration": "light",
+          "inn": "7725038124"
+        },
+        {
+          "id": "bank-domrf2",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fdomrf.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fdomrf.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FDOMRF_color.svg",
+          "name": "Банк ДОМ.РФ Тест",
+          "legalName": "АО «Банк ДОМ.РФ",
+          "integration": "light",
+          "env": ["ote"],
+          "inn": "7725038124"
+        },
+        {
+          "id": "bank-t",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Ftbank.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Ftbank.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FTBANK_color.svg",
+          "name": "Т-Банк",
+          "legalName": "АО «ТБАНК»",
+          "integration": "light",
+          "inn": "7710140679"
+        },
+        {
+          "id": "bank-unicredit",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Funicredit.svg",
+          "name": "ЮниКредит Банк",
+          "integration": "none"
+        },
+        {
+          "id": "bank-mkb",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fmkb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fmkb.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FMKB_color.svg",
+          "name": "МКБ",
+          "legalName": "ПАО «МКБ»",
+          "integration": "light",
+          "inn": "7734202860"
+        },
+        {
+          "id": "bank-absolut",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fabsolut.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fabsolut.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FABSOLUT_color.svg",
+          "name": "Абсолют Банк",
+          "legalName": "АКБ «Абсолют Банк» (ПАО)",
+          "integration": "light",
+          "inn": "7736046991"
+        },
+        {
+          "id": "bank-personal-loan-emulator",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fbank-personal-loan-emulator.svg",
+          "name": "Циан Банк",
+          "integration": "api",
+          "env": ["ote"]
+        },
+        {
+          "id": "bank-mts",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fmts.svg",
+          "name": "МТС-Банк",
+          "legalName": "ПАО «МТС-Банк»",
+          "integration": "api",
+          "env": ["ote"],
+          "inn": "7702045051"
+        }
+      ],
+      "randomList": [
+        {
+          "id": "bank-t",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Ftbank.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Ftbank.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FTBANK_color.svg",
+          "name": "Т-Банк",
+          "legalName": "АО «ТБАНК»",
+          "integration": "light",
+          "inn": "7710140679"
+        },
+        {
+          "id": "bank-psb",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fpsb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fpsb.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FPSB_color.svg",
+          "name": "ПСБ",
+          "legalName": "ПAO «Промсвязьбанк»",
+          "integration": "light",
+          "inn": "7744000912"
+        },
+        {
+          "id": "bank-vtb-new",
+          "enabled": false,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Fvtb.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Fvtb.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FVTB_color.svg",
+          "name": "ВТБ",
+          "legalName": "Банк ВТБ (ПАО)",
+          "integration": "none",
+          "inn": "7702070139"
+        },
+        {
+          "id": "bank-uralsib",
+          "enabled": true,
+          "logo": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbanks\u002Flogos\u002Furalsib.svg",
+          "icon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Fbages\u002Furalsib.svg",
+          "fullsizeIcon": "https:\u002F\u002Fstatic.cdn-cian.ru\u002Ffrontend\u002Ffinance-assets\u002Ffullsize\u002FURALSIB_color.svg",
+          "name": "Уралсиб",
+          "legalName": "ПАО «Банк Уралсиб»",
+          "integration": "light",
+          "inn": "0274062111"
+        }
+      ]
+    },
+    "mortgagePromoDesign": null,
+    "flatTourBooking": {
+      "isTooltipOpen": false,
+      "schedule": null
+    },
+    "crossedOutPriceExcludeNewbuildingIds": [
+      6190, 7904, 8753, 30342, 2096941, 1611, 34895
+    ],
+    "comparisonNotification": null,
+    "rs": {
+      "bestPlaceAnalyticsReportExampleUrl": "https:\u002F\u002Fcian.bestplace.pro\u002Flocation-report\u002Fexample.pdf?utm_source=bestplace-landingpro",
+      "bestPlaceReportLegalDocsUrl": "https:\u002F\u002Fwww.cian.ru\u002Flegal-documents\u002Fdogovor_publichnaya_oferta_ob_okazanii_uslugi_otchet_o_privlekatelnosti_obekta_0",
+      "bestPlaceReportBaseUrl": "https:\u002F\u002Fcian.bestplace.pro\u002Flocation-report",
+      "bestPlaceReportProviderInfo": "Услугу предоставляет ООО «Бест-Плейс», ОГРН: 5167746245960",
+      "isPerformanceVasPilot": true,
+      "bookedFromDeveloperEnabled": true,
+      "kpnChat": {
+        "enabled": true
+      },
+      "isCpcAuctionEnabled": true
+    },
+    "isQaMode": false,
+    "isRenterFormEnabled": true,
+    "isScrollToCalculator": false,
+    "mortgageType": null,
+    "bestPlaceModal": {
+      "isOpened": false
+    },
+    "recommendedVillages": null,
+    "genplan": null,
+    "adfoxOffer": {
+      "response": {
+        "status": "ok",
+        "data": {
+          "ymEvents": {
+            "onPriceChange": {
+              "eventName": "reachGoal",
+              "target": "sb_mimo_premium"
+            }
+          },
+          "unicomLinkParams": {
+            "puid12": 310104717,
+            "puid13": 21713087,
+            "puid14": "Москва, район ЦАО, ул. Усачева, 40",
+            "puid16": "вторичка"
+          },
+          "dealType": "sale",
+          "offerType": "flat",
+          "params": {
+            "puid1": "deal_type_sale",
+            "puid2": "offer_flat",
+            "puid36": 1,
+            "puid3": "sale_type_second",
+            "puid4": "offer_type_2",
+            "puid5": "obl_id_1",
+            "puid6": "20001_25000",
+            "puid7": "2323",
+            "puid8": 21713087,
+            "puid9": 118,
+            "puid10": "no_agent",
+            "puid16": "false",
+            "puid17": "false",
+            "puid19": "not_video",
+            "puid41": "premium"
+          }
+        }
+      },
+      "statusCode": 200
+    },
+    "isStartChatWidgetInDropdown": false,
+    "rosreestr": null,
+    "bestPlaceAnalytics": {
+      "amount": null,
+      "discount": null,
+      "discountPrice": null,
+      "paymentUrl": null,
+      "status": null,
+      "statusMessage": null,
+      "userEmail": null
+    },
+    "buildersProjectsLocations": [],
+    "suburbanBuildersProjects": [],
+    "reviewsGoToAppModal": {
+      "isOpen": false
+    },
+    "valuationTraps": {
+      "isMyHomeObjectsExists": false,
+      "isEstimationExist": false
+    },
+    "cpd": {
+      "isCpdAvailable": true,
+      "modals": {
+        "labelModal": {
+          "isOpen": false,
+          "modalView": "none"
+        },
+        "prelandingModal": {
+          "isOpen": false,
+          "modalView": "none"
+        },
+        "cpdDraftStatus": "init"
+      }
+    },
+    "dailyrentBooking": {
+      "general": {
+        "isLoading": false,
+        "isOnlineBooking": false,
+        "defaultBookingMessage": "",
+        "error": ""
+      },
+      "calendar": {
+        "isOpen": false,
+        "initialLoading": false,
+        "daysAvailability": [],
+        "showBookingCalendar": false,
+        "dateInputText": "",
+        "dates": {}
+      },
+      "guests": {
+        "isOpen": false,
+        "guestsCount": 1,
+        "minGuestsCount": 1,
+        "maxGuestsCount": 99
+      }
+    },
+    "dailyrentActionType": null,
+    "dailyrentData": {},
+    "bannerRotation": 0,
+    "comparison": {
+      "comparison": {
+        "props": [],
+        "offers": [],
+        "notFoundUrl": "\u002Fkupit-kvartiru\u002F",
+        "seoData": {
+          "h1": "Сравнение квартир",
+          "title": "Сравнение квартир в Москве - ЦИАН",
+          "description": "Сравнение квартир в Москве по цене, площади и другим параметрам. Выбирайте на ЦИАН."
+        }
+      }
+    },
+    "chatOnboarding": {
+      "wasChatOpened": false
+    },
+    "newbuildingBrokerOfferBooking": {
+      "enabled": false,
+      "callbackWidgetOpened": false,
+      "galleryBannerAnalyticsSent": false,
+      "loading": false,
+      "bookingExistsModalOpened": false,
+      "professionalAccessBlockedModalOpened": false
+    },
+    "newbuildingBrokerDIY": {
+      "enabled": false,
+      "galleryBannerAnalyticsSent": false
+    },
+    "newbuildingExtraPrices": {
+      "extraPrices": [],
+      "linkedPromos": []
+    },
+    "newbuildingBookedOfferLayouts": [],
+    "bookedOfferRecommendations": [],
+    "earlyAccessCounter": null,
+    "contextToken": ""
+  },
+  "priority": 10,
+  "filter": {}
+}
